@@ -15,7 +15,7 @@ export const PlayerRow = ({
     <tr data-id={id}>
       <td>{Name}</td>
       <td>
-        <img src={Photo} />
+        <img src={Photo} alt="alt_text"/>
       </td>
       <td>{Nationality}</td>
       <td>{Positions}</td>

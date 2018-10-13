@@ -6,40 +6,42 @@ class Players extends Component {
     super();
     this.state = {
       players: [],
-      startingPoint: 0,
-      offset: 30
+			offset: 0,
+			countries: []
     };
   }
-  // componentDidUpdate() {
-  //   console.log(this.state.startingPoint);
-  // }
+
   componentDidMount() {
-    this.getPlayers();
+		this.getPlayers(0, 30);
+		this.getCountryOptions();
   }
 
-  getPlayers = async () => {
-    const players = await fetch.getPlayers();
-    this.setState({ players });
+  getPlayers = async (x, y) => {
+		const players = await fetch.getPlayers(x, y);
+    this.setState({ players, offset: x });
   };
 
   changeOffset = number => {
-    this.setState({
-      startingPoint: this.state.startingPoint + number,
-      offset: this.state.offset + number
-    });
-  };
+    this.getPlayers(number, number + 30);
+	};
+
+	getCountryOptions = async () => {
+		const countries = await fetch.getCountries();
+		const results =  countries.map(country => <option key={country.id} value={country.id}>{country.name}</option>);
+		this.setState({countries: results});
+	}
 
   render() {
-    const displaySet = this.state.players.filter(
-      (player, index) =>
-        index >= this.state.startingPoint && index < this.state.offset
-    );
-    const playerRows = displaySet.map((player, index) => (
+
+		const displayedPlayers = this.state.players.map((player, index) => (
       <PlayerRow key={`player-${index}`} {...player} />
-    ));
-    console.log(this.state.offset);
+		));
+		
     return (
       <div>
+				<select onChange={this.filterPlayersByCountry}>
+					{this.state.countries}
+				</select>					
         <table>
           <tbody>
             <tr>
@@ -52,16 +54,16 @@ class Players extends Component {
               <th>Value</th>
               <th>Wage</th>
             </tr>
-            {playerRows}
+            {displayedPlayers}
           </tbody>
         </table>
-        <button className="next-page" onClick={() => this.changeOffset(30)}>
+        <button className="next-page" onClick={() => this.changeOffset(this.state.offset + 30)}>
           Next Page
         </button>
         {this.state.startingPoint !== 0 && (
           <button
             className="Previouse-page"
-            onClick={() => this.changeOffset(-30)}
+            onClick={() => this.changeOffset(this.state.offset -  30)}
           >
             Previous Page
           </button>
