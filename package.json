@@ -25,11 +25,11 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "eslint": "eslint src/"
   },
-  "proxy": "http://localhost:3000",
   "devDependencies": {
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "eslint": "^5.4.0",
     "prop-types": "^15.6.2"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
