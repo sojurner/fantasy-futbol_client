@@ -1,4 +1,5 @@
 import React from 'react';
+import './PlayerRow.css';
 
 export const PlayerRow = ({
   id,
@@ -9,13 +10,14 @@ export const PlayerRow = ({
   Club,
   Overall,
   Value,
-  Wage
+  Wage,
+  onOpenModal
 }) => {
   return (
-    <tr data-id={id}>
+    <tr data-id={id} className={Name} onClick={onOpenModal.bind(null, id)}>
       <td>{Name}</td>
       <td>
-        <img src={Photo} alt="alt_text"/>
+        <img src={Photo} alt="alt_text" />
       </td>
       <td>{Nationality}</td>
       <td>{Positions}</td>
