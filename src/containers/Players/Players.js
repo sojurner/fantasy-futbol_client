@@ -4,6 +4,8 @@ import Modal from 'react-responsive-modal';
 import * as fetch from '../../helpers/apiCalls/apiCalls';
 import { PlayerRow } from '../../components/PlayerRow/PlayerRow';
 import { PlayerModal } from '../../components/PlayerModal/PlayerModal';
+import { FilterBar } from '../../components/FilterBar/FilterBar';
+
 import './Players.css';
 class Players extends Component {
   constructor() {
@@ -82,14 +84,12 @@ class Players extends Component {
   render() {
     return (
       <div>
-        <select
-          onChange={event => this.filterPlayersByCountry(event.target.value)}
-        >
-          {this.state.countries}
-        </select>
-				<form onSubmit={this.searchByPlayer}>
-					<input name='searchInput' value={this.state.name} placeholder="Search by name" onChange={this.handleChange}/>
-				</form>
+        <FilterBar
+					filterPlayersByCountry={this.filterPlayersByCountry}
+					searchByPlayer={this.searchByPlayer}
+					handleChange={this.handleChange}
+					currentSearchValue={this.state.searchInput}
+					countries={this.state.countries}/>
         <table>
           <tbody>
             <tr>
