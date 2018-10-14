@@ -23,7 +23,6 @@ export const getPlayersByCountry = async id => {
     // `http://localhost:3000/api/v1/countries/${id}/players`
   );
   const players = await response.json();
-  console.table(players);
   return clean.cleanPlayers(players);
 };
 
@@ -33,4 +32,11 @@ export const getPlayer = async id => {
   );
   const player = await response.json();
   return clean.cleanPlayerStats(player);
+};
+
+
+export const getResultsByPlayerName = async name => {
+	const response = await fetch(`https://fantasy-futbol.herokuapp.com/api/v1/players?name=${name}`);
+	const players = await response.json();
+  return clean.cleanPlayers(players);
 };

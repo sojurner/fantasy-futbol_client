@@ -13,7 +13,8 @@ class Players extends Component {
       countries: [],
       playerModal: [],
       offset: 0,
-      open: false
+			open: false,
+			searchInput: ''
     };
   }
 
@@ -24,14 +25,8 @@ class Players extends Component {
 
   getPlayers = async (start, end) => {
     const players = await fetch.getPlayers(start, end);
-    const currentPlayers = players.map((player, index) => (
-      <PlayerRow
-        key={`player-${index}`}
-        {...player}
-        onOpenModal={this.onOpenModal}
-      />
-    ));
-    this.setState({ currentPlayers, offset: start });
+    this.makePlayerRows(players);
+    this.setState({ offset: start });
   };
 
   changeOffset = number => {
@@ -50,15 +45,19 @@ class Players extends Component {
 
   filterPlayersByCountry = async value => {
     const players = await fetch.getPlayersByCountry(value);
-    const currentPlayers = players.map((player, index) => (
+    this.makePlayerRows(players);
+	};
+	
+	makePlayerRows = (players) => {
+	const currentPlayers = players.map((player, index) => (
       <PlayerRow
         key={`player-${index}`}
         {...player}
         onOpenModal={this.onOpenModal}
       />
-    ));
-    this.setState({ currentPlayers });
-  };
+		));
+    this.setState({ currentPlayers });		
+	}
 
   onOpenModal = async id => {
     const player = await fetch.getPlayer(id);
@@ -67,7 +66,18 @@ class Players extends Component {
 
   onCloseModal = () => {
     this.setState({ open: false });
-  };
+	};
+	
+	searchByPlayer = async (e) => {
+		e.preventDefault();
+		const currentPlayer = await fetch.getResultsByPlayerName(this.state.searchInput);
+    this.makePlayerRows(currentPlayer);
+	}
+
+	handleChange = e => {
+		const { name, value } = e.target;
+		this.setState({[name]: value });
+	}
 
   render() {
     return (
@@ -77,6 +87,9 @@ class Players extends Component {
         >
           {this.state.countries}
         </select>
+				<form onSubmit={this.searchByPlayer}>
+					<input name='searchInput' value={this.state.name} placeholder="Search by name" onChange={this.handleChange}/>
+				</form>
         <table>
           <tbody>
             <tr>
