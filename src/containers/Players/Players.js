@@ -76,10 +76,10 @@ class Players extends Component {
     this.makePlayerRows(currentPlayer);
 	}
 
-	handleChange = e => {
+  handleChange = async e => {
 		const { name, value } = e.target;
-		this.setState({[name]: value });
-	}
+    this.setState({ [name]: value });
+  };
 
   render() {
     const {
