@@ -1,0 +1,15 @@
+.dashboard {
+  grid-column: 1 / 2;
+  background-color: rgb(240, 240, 240);
+  margin: 0 1rem;
+  border-right: 2px solid rgb(202, 202, 202);
+}
+
+.dash-text {
+  color: rgb(168, 168, 168);
+  opacity: 0.4;
+}
+
+.users {
+  border-bottom: 1px solid red;
+}

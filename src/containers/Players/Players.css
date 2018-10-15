@@ -1,5 +1,13 @@
+.players-table {
+  grid-column: 2 / 3; }
+
+.filter-players {
+  display: grid;
+  grid-template-columns: 2fr 1fr; }
+
 table {
-  margin: auto; }
+  margin: auto;
+  grid-column: 1 / 2; }
 
 tbody {
   display: block;
@@ -9,6 +17,5 @@ tbody {
 
 th {
   font-size: 1.5rem;
-  padding: 0 3rem;
   text-align: center;
   background: #c2c2c2; }
