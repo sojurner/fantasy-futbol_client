@@ -74,7 +74,14 @@ class Players extends Component {
 		e.preventDefault();
 		const currentPlayer = await fetch.getResultsByPlayerName(this.state.searchInput);
     this.makePlayerRows(currentPlayer);
-	}
+
+  searchByClub = async e => {
+    e.preventDefault();
+    const currentPlayers = await fetch.getResultsByPlayerClub(
+      this.state.searchedClub
+    );
+    this.makePlayerRows(currentPlayers);
+  };
 
   handleChange = async e => {
 		const { name, value } = e.target;
