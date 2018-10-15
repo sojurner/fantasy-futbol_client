@@ -12,17 +12,21 @@ class Players extends Component {
     super();
     this.state = {
       currentPlayers: [],
+      playerNames: [],
       countries: [],
       playerModal: [],
       offset: 0,
 			open: false,
-			searchInput: ''
+      searchedName: '',
+      searchedClub: ''
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.getPlayers(0, 30);
     this.getCountryOptions();
+    const playerNames = await fetch.getAllPlayers();
+    this.setState({ playerNames });
   }
 
   getPlayers = async (start, end) => {
@@ -50,7 +54,7 @@ class Players extends Component {
     this.makePlayerRows(players);
 	};
 	
-	makePlayerRows = (players) => {
+  makePlayerRows = players => {
 	const currentPlayers = players.map((player, index) => (
       <PlayerRow
         key={`player-${index}`}
@@ -59,7 +63,7 @@ class Players extends Component {
       />
 		));
     this.setState({ currentPlayers });		
-	}
+  };
 
   onOpenModal = async id => {
     const player = await fetch.getPlayer(id);
