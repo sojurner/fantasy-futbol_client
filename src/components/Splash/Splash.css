@@ -1,0 +1,18 @@
+.home-button {
+  text-align: center;
+  text-decoration-line: none;
+  border: 5px solid #f5c5c5;
+  border-radius: 0.5rem;
+  padding: 1.7rem;
+  color: #eebcbc;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  width: 15rem;
+  height: 2rem;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: -30rem;
+  left: 0;
+  right: 0; }
