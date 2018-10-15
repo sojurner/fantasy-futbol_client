@@ -1,0 +1,22 @@
+.navigation {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 10rem;
+  top: 5rem;
+  bottom: 0;
+  width: 10rem; }
+
+.nav-bar {
+  border-radius: 0.5rem;
+  border-spacing: 0.5rem;
+  text-decoration-line: none;
+  font-size: 2rem;
+  margin: 0.5rem;
+  color: antiquewhite;
+  padding: 0.5rem; }
+
+.active {
+  border-right: 0.5rem double;
+  border-left: 0.5rem double;
+  border-color: white; }
