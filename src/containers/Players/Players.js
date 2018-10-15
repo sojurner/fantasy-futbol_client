@@ -96,10 +96,13 @@ class Players extends Component {
       <div>
         <FilterBar
 					filterPlayersByCountry={this.filterPlayersByCountry}
+          searchByClub={this.searchByClub}
 					searchByPlayer={this.searchByPlayer}
 					handleChange={this.handleChange}
-					currentSearchValue={this.state.searchInput}
-					countries={this.state.countries}/>
+          currentSearchName={searchedName}
+          currentSearchClub={searchedClub}
+          countries={countries}
+        />
         <table>
           <tbody>
             <tr>
@@ -112,12 +115,12 @@ class Players extends Component {
               <th>Value</th>
               <th>Wage</th>
             </tr>
-            {this.state.currentPlayers}
+            {currentPlayers}
           </tbody>
         </table>
         <button
           className="next-page"
-          onClick={() => this.changeOffset(this.state.offset + 30)}
+          onClick={() => this.changeOffset(offset + 30)}
         >
           Next Page
         </button>
@@ -130,8 +133,8 @@ class Players extends Component {
           </button>
         )}
 
-        <Modal open={this.state.open} onClose={this.onCloseModal} center>
-          <PlayerModal playerModal={this.state.playerModal} />
+        <Modal open={open} onClose={this.onCloseModal} center>
+          <PlayerModal playerModal={playerModal} />
         </Modal>
       </div>
     );
