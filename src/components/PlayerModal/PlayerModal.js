@@ -1,26 +1,24 @@
 import React from 'react';
-import { BarChart } from 'react-easy-chart';
+import { HorizontalBar } from 'react-chartjs-2';
 
 export const PlayerModal = ({ playerModal }) => {
-  let data = [];
-  const playerStats = playerModal.map(stats => {
-    data = Object.keys(stats).map(key => {
-      if (stats[key]) {
-        return { x: key, y: stats[key] };
-      }
-    });
-    return (
-      <BarChart
-        axisLabels={{ x: 'Stats', y: 'Score' }}
-        axes
-        yDomainRange={[0, 100]}
-        grid
-        colorBars
-        axes
-        data={data}
-      />
-    );
+  const playerStats = playerModal.map(statType => {
+    const data = {
+      labels: Object.keys(statType),
+      datasets: [
+        {
+          label: 'My First dataset',
+          backgroundColor: 'rgba(179,181,198,0.2)',
+          borderColor: 'rgba(179,181,198,1)',
+          pointBackgroundColor: 'rgba(179,181,198,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(179,181,198,1)',
+          data: Object.values(statType)
+        }
+      ]
+    };
+    return <HorizontalBar data={data} height="215px" />;
   });
-
   return <div>{playerStats}</div>;
 };
