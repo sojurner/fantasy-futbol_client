@@ -1,7 +1,12 @@
 tr {
   cursor: pointer;
+  color: white;
+  background: gray;
+  text-align: center;
+  font-weight: 700;
 }
 
 tr:hover {
-  background-color: antiquewhite;
+  color: black;
+  background-color: rgb(193, 175, 152);
 }
