@@ -55,6 +55,6 @@ export const getResultsByPlayerClub = async club => {
   const response = await fetch(
     `https://fantasy-futbol.herokuapp.com/api/v1/players?club=${club}`
   );
-	const players = await response.json();
+  const players = await response.json();
   return clean.cleanPlayers(players);
 };

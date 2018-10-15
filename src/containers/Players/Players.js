@@ -16,7 +16,7 @@ class Players extends Component {
       countries: [],
       playerModal: [],
       offset: 0,
-			open: false,
+      open: false,
       searchedName: '',
       searchedClub: ''
     };
@@ -52,17 +52,17 @@ class Players extends Component {
   filterPlayersByCountry = async value => {
     const players = await fetch.getPlayersByCountry(value);
     this.makePlayerRows(players);
-	};
-	
+  };
+
   makePlayerRows = players => {
-	const currentPlayers = players.map((player, index) => (
+    const currentPlayers = players.map((player, index) => (
       <PlayerRow
         key={`player-${index}`}
         {...player}
         onOpenModal={this.onOpenModal}
       />
-		));
-    this.setState({ currentPlayers });		
+    ));
+    this.setState({ currentPlayers });
   };
 
   onOpenModal = async id => {
@@ -72,10 +72,10 @@ class Players extends Component {
 
   onCloseModal = () => {
     this.setState({ open: false });
-	};
-	
+  };
+
   searchByPlayer = async e => {
-		e.preventDefault();
+    e.preventDefault();
     const currentPlayer = await fetch.getResultsByPlayerName(
       this.state.searchedName
     );
@@ -91,7 +91,7 @@ class Players extends Component {
   };
 
   handleChange = async e => {
-		const { name, value } = e.target;
+    const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
@@ -109,10 +109,10 @@ class Players extends Component {
     return (
       <div>
         <FilterBar
-					filterPlayersByCountry={this.filterPlayersByCountry}
+          filterPlayersByCountry={this.filterPlayersByCountry}
           searchByClub={this.searchByClub}
-					searchByPlayer={this.searchByPlayer}
-					handleChange={this.handleChange}
+          searchByPlayer={this.searchByPlayer}
+          handleChange={this.handleChange}
           currentSearchName={searchedName}
           currentSearchClub={searchedClub}
           countries={countries}
