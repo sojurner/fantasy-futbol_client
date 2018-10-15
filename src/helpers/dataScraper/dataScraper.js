@@ -1,5 +1,4 @@
 export const cleanPlayers = players =>
-  console.log(players) ||
   players.map(player => ({
     Name: player.Name,
     id: player.id,
@@ -12,16 +11,17 @@ export const cleanPlayers = players =>
     Wage: player.Wage
   }));
 
+export const cleanPlayerNames = players => {
+  return players.map(player => player.Name);
+};
+
 export const cleanPlayerStats = player => {
   const skillKeys = [
     'Acceleration',
     'Aggression',
     'Agility',
     'Balance',
-    'Composure'
-  ];
-
-  const performace = [
+    'Composure',
     'Strength',
     'Sprint_speed',
     'Jumping',
@@ -37,14 +37,16 @@ export const cleanPlayerStats = player => {
     'GK_reflexes'
   ];
 
-  const ballSkills = ['Dribbling', 'Ball_control', 'Positioning', 'Curve'];
-
   const offensiveStats = [
     'Free_kick_accuracy',
     'Shot_power',
     'Long_shots',
     'Heading_accuracy',
-    'Finishing'
+    'Finishing',
+    'Dribbling',
+    'Ball_control',
+    'Positioning',
+    'Curve'
   ];
 
   const defensiveStats = [
@@ -52,17 +54,16 @@ export const cleanPlayerStats = player => {
     'Marking',
     'Reactions',
     'Sliding_tackle',
-    'Standing_tackle'
+    'Standing_tackle',
+    'Crossing',
+    'Volleys',
+    'Short_passing',
+    'Long_passing'
   ];
-
-  const passingStats = ['Crossing', 'Volleys', 'Short_passing', 'Long_passing'];
 
   return [
     modifyStats(player[0], skillKeys),
-    modifyStats(player[0], performace),
-    modifyStats(player[0], ballSkills),
     modifyStats(player[0], offensiveStats),
-    modifyStats(player[0], passingStats),
     modifyStats(player[0], defensiveStats),
     modifyStats(player[0], goalieKeys)
   ];
