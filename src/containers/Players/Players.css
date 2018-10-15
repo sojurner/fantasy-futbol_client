@@ -1,2 +1,14 @@
 table {
   margin: auto; }
+
+tbody {
+  display: block;
+  height: 70vh;
+  overflow-y: scroll;
+  border-radius: 0.5rem; }
+
+th {
+  font-size: 1.5rem;
+  padding: 0 3rem;
+  text-align: center;
+  background: #c2c2c2; }
