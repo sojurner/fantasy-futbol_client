@@ -1,3 +1,30 @@
 .chartjs-render-monitor {
   font-size: 2rem;
 }
+
+.styles_closeButton__20ID4 {
+  cursor: pointer;
+}
+
+.styles_closeButton__20ID4:hover {
+  color: rgb(201, 184, 184);
+  animation: pulse 1s linear infinite;
+}
+
+.styles_closeButton__20ID4:focus {
+  outline: 0;
+}
+
+// styles_closeIcon__1QwbI
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(157, 158, 158, 0.367);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(157, 158, 158, 0.134);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(157, 158, 158, 0);
+  }
+}
