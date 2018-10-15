@@ -82,6 +82,16 @@ class Players extends Component {
 	}
 
   render() {
+    const {
+      searchedName,
+      searchedClub,
+      playerModal,
+      offset,
+      currentPlayers,
+      countries,
+      open
+    } = this.state;
+
     return (
       <div>
         <FilterBar
