@@ -12,7 +12,7 @@ export const FilterBar = ({
   searchByClub
 }) => {
   return (
-    <div>
+    <div className="filter-bar">
       <select onChange={event => filterPlayersByCountry(event.target.value)}>
         {countries}
       </select>

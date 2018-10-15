@@ -107,31 +107,33 @@ class Players extends Component {
     } = this.state;
 
     return (
-      <div>
-        <FilterBar
-          filterPlayersByCountry={this.filterPlayersByCountry}
-          searchByClub={this.searchByClub}
-          searchByPlayer={this.searchByPlayer}
-          handleChange={this.handleChange}
-          currentSearchName={searchedName}
-          currentSearchClub={searchedClub}
-          countries={countries}
-        />
-        <table>
-          <tbody>
-            <tr>
-              <th>Name</th>
-              <th>Photo</th>
-              <th>Nationality</th>
-              <th>Positions</th>
-              <th>Club</th>
-              <th>Overall</th>
-              <th>Value</th>
-              <th>Wage</th>
-            </tr>
-            {currentPlayers}
-          </tbody>
-        </table>
+      <div className="players-table">
+        <div className="filter-players">
+          <FilterBar
+            filterPlayersByCountry={this.filterPlayersByCountry}
+            searchByClub={this.searchByClub}
+            searchByPlayer={this.searchByPlayer}
+            handleChange={this.handleChange}
+            currentSearchName={searchedName}
+            currentSearchClub={searchedClub}
+            countries={countries}
+          />
+          <table>
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <th>Photo</th>
+                <th>Nationality</th>
+                <th>Positions</th>
+                <th>Club</th>
+                <th>Overall</th>
+                <th>Value</th>
+                <th>Wage</th>
+              </tr>
+              {currentPlayers}
+            </tbody>
+          </table>
+        </div>
         <button
           className="next-page"
           onClick={() => this.changeOffset(offset + 30)}
