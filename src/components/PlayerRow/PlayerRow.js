@@ -15,10 +15,12 @@ export const PlayerRow = ({
 }) => {
   return (
     <tr data-id={id} className={Name} onClick={onOpenModal.bind(null, id)}>
-      <td>{Name}</td>
       <td>
-        <img src={Photo} alt="alt_text" />
+        <img src={Photo} height="35" className="photo" alt="alt_text" />
       </td>
+
+      <td>{Name}</td>
+
       <td>{Nationality}</td>
       <td>{Positions}</td>
       <td>{Club}</td>

@@ -10,7 +10,6 @@ export const getPlayers = async (start, end) => {
 };
 
 export const getAllPlayers = async () => {
-  let array = [];
   const response = await fetch(
     `https://fantasy-futbol.herokuapp.com/api/v1/players`
   );
@@ -67,8 +66,8 @@ export const addUser = async user => {
       username: JSON.stringify(user)
     },
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
+      'Content-Type': 'application/json'
+      // 'Access-Control-Allow-Origin': '*'
     }
   };
   const response = fetch(

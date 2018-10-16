@@ -10,7 +10,14 @@ class App extends Component {
   render() {
     return (
       <div className="master-body">
-        <h1 className="logo">Fantasy Fútbol</h1>
+        <h1 className="logo">
+          Fantasy Fútbol{' '}
+          <img
+            className="logo-img"
+            src={require('../../images/soccer1-logo.png')}
+            height="50"
+          />
+        </h1>
         <div className="body">
           <Dashboard />
           <Players />

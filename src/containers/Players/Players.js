@@ -76,25 +76,62 @@ class Players extends Component {
     this.setState({ open: false });
   };
 
-  searchByPlayer = async e => {
+  searchPlayers = async (e, type) => {
     e.preventDefault();
-    const currentPlayer = await fetch.getResultsByPlayerName(
-      this.state.searchedName
-    );
-    this.makePlayerRows(currentPlayer);
-  };
+    let players;
+    const { textContent } = e.target;
 
-  searchByClub = async e => {
-    e.preventDefault();
-    const currentPlayers = await fetch.getResultsByPlayerClub(
-      this.state.searchedClub
-    );
-    this.makePlayerRows(currentPlayers);
+    type === 'name'
+      ? (players = await fetch.getResultsByPlayerName(textContent))
+      : (players = await fetch.getResultsByPlayerClub(textContent));
+    this.makePlayerRows(players);
   };
 
   handleChange = async e => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    if (name === 'searchedName') {
+      this.setState({
+        [name]: value,
+        playerSuggestions: this.getSuggestions(value, name)
+      });
+    } else {
+      this.setState({
+        [name]: value,
+        clubSuggestions: this.getSuggestions(value, name)
+      });
+    }
+  };
+
+  escapeRegexCharacters = str => {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  };
+
+  getSuggestions = (value, name) => {
+    const escapedValue = this.escapeRegexCharacters(value.trim());
+    if (escapedValue === '') {
+      return [];
+    }
+    const regex = new RegExp('\\b' + escapedValue, 'i');
+    if (name === 'searchedName') {
+      return playerData.filter(player =>
+        regex.test(this.getSuggestionValue(player, name))
+      );
+    }
+    if (name === 'searchedClub') {
+      return clubData.filter(club =>
+        regex.test(this.getSuggestionValue(club, name))
+      );
+    }
+  };
+
+  getSuggestionValue = (suggestion, name) => {
+    if (name === 'searchedName') {
+      return `${suggestion.Name}`;
+    }
+
+    if (name === 'searchedClub') {
+      return `${suggestion}`;
+    }
   };
 
   render() {
@@ -105,7 +142,9 @@ class Players extends Component {
       offset,
       currentPlayers,
       countries,
-      open
+      open,
+      playerSuggestions,
+      clubSuggestions
     } = this.state;
 
     return (
@@ -113,18 +152,22 @@ class Players extends Component {
         <div className="filter-players">
           <FilterBar
             filterPlayersByCountry={this.filterPlayersByCountry}
-            searchByClub={this.searchByClub}
-            searchByPlayer={this.searchByPlayer}
+            searchPlayers={this.searchPlayers}
             handleChange={this.handleChange}
             currentSearchName={searchedName}
             currentSearchClub={searchedClub}
             countries={countries}
+            playerSuggestions={playerSuggestions.slice(0, 5)}
+            clubSuggestions={clubSuggestions.slice(0, 5)}
           />
+
           <table>
             <tbody>
               <tr>
-                <th>Name</th>
-                <th>Photo</th>
+                <th>
+                  <i class="fas fa-futbol" />
+                </th>
+                <th className="player-name">Player Name</th>
                 <th>Nationality</th>
                 <th>Positions</th>
                 <th>Club</th>
