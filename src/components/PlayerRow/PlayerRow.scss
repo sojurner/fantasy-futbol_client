@@ -1,12 +1,27 @@
+@font-face {
+  font-family: noto-thin;
+  src: url('../../fonts/NotoSansKR-Thin.otf');
+}
+
 tr {
   cursor: pointer;
-  color: white;
-  background: gray;
+  color: rgb(88, 86, 86);
+  // background: rgb(228, 225, 225);
   text-align: center;
   font-weight: 700;
+  font-family: noto-thin;
+  font-size: 1rem;
 }
 
 tr:hover {
   color: black;
-  background-color: rgb(193, 175, 152);
+  background-color: rgb(228, 228, 226);
+}
+
+td {
+  padding: 0 0.8rem;
+  text-align: left;
+}
+
+.photo {
 }

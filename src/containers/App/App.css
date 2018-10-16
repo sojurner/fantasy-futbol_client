@@ -4,12 +4,11 @@
 
 .logo {
   margin: 0;
-  width: 100vw;
-  background-color: #1c212a;
+  background-color: #303949;
   color: wheat;
   font-family: patua;
   padding: 0.5rem 1.5rem; }
 
 .body {
   display: grid;
-  grid-template-columns: 1fr 5fr; }
+  grid-template-columns: 1fr 4fr; }

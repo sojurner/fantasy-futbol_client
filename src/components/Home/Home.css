@@ -15,8 +15,3 @@
   margin: 0.5rem;
   color: antiquewhite;
   padding: 0.5rem; }
-
-.active {
-  border-right: 0.5rem double;
-  border-left: 0.5rem double;
-  border-color: white; }
