@@ -1,14 +1,35 @@
+@font-face {
+  font-family: noto;
+  src: url("../../fonts/NotoSansKR-Regular.otf"); }
+
+.players-table {
+  grid-column: 2 / 3; }
+
+.filter-players {
+  display: grid;
+  background-color: #cfcfcf;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh; }
+
 table {
-  margin: auto; }
+  margin: 1rem auto;
+  grid-column: 1 / 2;
+  background-color: white;
+  border-collapse: collapse; }
 
 tbody {
   display: block;
-  height: 70vh;
-  overflow-y: scroll;
-  border-radius: 0.5rem; }
+  height: 90vh;
+  overflow-y: scroll; }
 
 th {
-  font-size: 1.5rem;
-  padding: 0 3rem;
+  font-size: 1rem;
   text-align: center;
-  background: #c2c2c2; }
+  background: #cfcece;
+  padding: 0.5rem;
+  font-family: noto;
+  color: #bbb8b8;
+  background-color: #303949; }
+
+.player-name {
+  text-align: left; }

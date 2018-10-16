@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+
 import Splash from '../../components/Splash/Splash';
 import Home from '../../components/Home/Home';
 import Dashboard from '../../containers/Dashboard/Dashboard';
@@ -9,15 +9,21 @@ import Players from '../../containers/Players/Players';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <div className="master-body">
+        <h1 className="logo">
+          Fantasy Fútbol{' '}
+          <img
+            className="logo-img"
+            src={require('../../images/soccer1-logo.png')}
+            height="50"
+          />
+        </h1>
         <div className="body">
-          <h1 className="futbol-title">Fantasy Fútbol</h1>
-          <Route exact path="/" component={Splash} />
-          <Route path="/home" component={Home} />
-          <Route exact path="/home/dashboard" component={Dashboard} />
-          <Route exact path="/home/players" component={Players} />
+          <Dashboard />
+          <Players />
+          {/* <h1 className="futbol-title">Fantasy Fútbol</h1> */}
         </div>
-      </BrowserRouter>
+      </div>
     );
   }
 }

@@ -1,0 +1,111 @@
+@font-face {
+  font-family: robot;
+  src: url('../../fonts/RobotoCondensed-Regular.ttf');
+}
+
+.dashboard {
+  grid-column: 1 / 2;
+  background-color: rgb(240, 240, 240);
+  margin: 0 1rem;
+  border-right: 2px solid rgb(202, 202, 202);
+}
+
+.dash-text {
+  color: rgb(168, 168, 168);
+  opacity: 0.4;
+}
+
+.team {
+  border-bottom: 1px solid rgb(192, 191, 191);
+  padding-bottom: 1rem;
+}
+
+.user-icon {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(192, 191, 191);
+}
+
+.user-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.user,
+.players,
+.dashboard-players {
+  text-decoration-line: none;
+  padding: 0.5rem 0.7rem;
+  font-family: robot;
+  font-size: 1.1rem;
+  color: rgb(90, 90, 90);
+  letter-spacing: 0.5px;
+}
+
+.user {
+  margin: 0 0 0 1.1rem;
+  width: 60%;
+  font-size: 1.3rem;
+  letter-spacing: 1.2px;
+}
+
+.user:hover {
+  background-color: #e2e0e0;
+}
+
+.user-option {
+  padding: 1rem 0;
+  display: flex;
+}
+
+.active {
+  border-left: 2px solid #3e7fdf;
+  background-color: rgb(235, 232, 232);
+}
+
+.fa-plus-circle {
+  color: rgb(92, 127, 221);
+  cursor: pointer;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+
+.fa-plus-circle:hover {
+  color: rgb(62, 97, 192);
+  animation: pulse 1s linear infinite;
+  border-radius: 50%;
+  border-color: #3e7fdf;
+}
+
+.user-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.users {
+  margin: 0 0 0 1rem;
+}
+
+.fa-minus-circle {
+  align-self: center;
+  font-size: 1.5rem;
+}
+
+.username-input {
+  height: 2rem;
+  width: 10rem;
+  margin: auto;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(23, 173, 173, 0.637);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(17, 221, 221, 0.493);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(128, 255, 255, 0.61);
+  }
+}

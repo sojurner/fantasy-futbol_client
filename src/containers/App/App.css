@@ -1,3 +1,14 @@
-.futbol-title {
-  color: white;
-  margin: auto; }
+@font-face {
+  font-family: 'patua';
+  src: url("../../fonts/PatuaOne-Regular.ttf"); }
+
+.logo {
+  margin: 0;
+  background-color: #303949;
+  color: wheat;
+  font-family: patua;
+  padding: 0.5rem 1.5rem; }
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 4fr; }
