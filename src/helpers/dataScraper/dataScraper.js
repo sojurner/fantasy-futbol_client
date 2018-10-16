@@ -12,7 +12,9 @@ export const cleanPlayers = players =>
   }));
 
 export const cleanPlayerNames = players => {
-  return players.map(player => player.Name);
+  return players.map(player => {
+    return { Name: player.Name, Photo: player.Photo };
+  });
 };
 
 export const cleanPlayerStats = player => {
