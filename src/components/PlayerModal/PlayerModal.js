@@ -3,6 +3,7 @@ import { HorizontalBar } from 'react-chartjs-2';
 import './PlayerModal.css';
 
 export const PlayerModal = ({ playerModal }) => {
+	console.log(playerModal)
   const playerStats = playerModal.map((statType, index) => {
     const data = {
       labels: Object.keys(statType),

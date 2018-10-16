@@ -22,7 +22,8 @@ class Players extends Component {
       searchedName: '',
       searchedClub: '',
       playerSuggestions: [],
-      clubSuggestions: []
+			clubSuggestions: [],
+			currentlySelectedUserPlayer: {}
     };
   }
 
@@ -68,8 +69,9 @@ class Players extends Component {
   };
 
   onOpenModal = async id => {
+		{currentlySelectedUserPlayer} = this.state
     const player = await fetch.getPlayer(id);
-    this.setState({ open: true, playerModal: player });
+    this.setState({ open: true, playerModal: player, currentlySelectedUserPlayer: this});
   };
 
   onCloseModal = () => {
@@ -195,7 +197,7 @@ class Players extends Component {
         )}
 
         <Modal open={open} onClose={this.onCloseModal} center>
-          <PlayerModal playerModal={playerModal} />
+          <PlayerModal addPlayerToUser={this.addPlayerToUser} playerModal={playerModal} />
         </Modal>
       </div>
     );
