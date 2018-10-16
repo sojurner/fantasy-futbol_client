@@ -7,6 +7,8 @@ import { PlayerModal } from '../../components/PlayerModal/PlayerModal';
 import { FilterBar } from '../../components/FilterBar/FilterBar';
 
 import './Players.css';
+import playerData from '../../data/playerData.json';
+import clubData from '../../data/clubData.json';
 class Players extends Component {
   constructor() {
     super();
@@ -18,15 +20,15 @@ class Players extends Component {
       offset: 0,
       open: false,
       searchedName: '',
-      searchedClub: ''
+      searchedClub: '',
+      playerSuggestions: [],
+      clubSuggestions: []
     };
   }
 
   async componentDidMount() {
     this.getPlayers(0, 30);
     this.getCountryOptions();
-    const playerNames = await fetch.getAllPlayers();
-    this.setState({ playerNames });
   }
 
   getPlayers = async (start, end) => {
