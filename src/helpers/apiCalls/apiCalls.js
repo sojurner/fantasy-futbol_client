@@ -10,6 +10,7 @@ export const getPlayers = async (start, end) => {
 };
 
 export const getAllPlayers = async () => {
+  let array = [];
   const response = await fetch(
     `https://fantasy-futbol.herokuapp.com/api/v1/players`
   );
@@ -67,7 +68,7 @@ export const addUser = async user => {
     },
     headers: {
       'Content-Type': 'application/json',
-      // 'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*'
     }
   };
   const response = fetch(
@@ -85,3 +86,23 @@ export const getUsers = async () => {
   return users;
 };
 
+export const getPlayersByUser = async userInfo => {
+  const playerKeys = Object.keys(userInfo).filter(keys =>
+    keys.includes('player')
+  );
+  const playerPromises = playerKeys.map(async key => {
+    const response = await fetch(
+      `https://fantasy-futbol.herokuapp.com/api/v1/players/${userInfo[key]}`
+    );
+    const player = await response.json();
+    return player;
+  });
+
+  const usersPlayers = await Promise.all(playerPromises);
+  return usersPlayers.reduce((playersArr, player) => {
+    player.forEach(obj => {
+      playersArr.push(obj);
+    });
+    return playersArr;
+  }, []);
+};
