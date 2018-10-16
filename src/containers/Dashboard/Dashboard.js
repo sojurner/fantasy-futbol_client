@@ -32,23 +32,21 @@ class Dashboard extends Component {
 
   handleChange = event => {
     event.preventDefault();
-    const { name, value } = event.target;
-    console.log({ name, value });
+    const { value } = event.target;
+		this.setState({newUserInput: value});
   };
 
   addUser = () => {
     this.setState({ open: true });
   };
 
-  createUser = e => {
+  createUser = async e => {
     e.preventDefault();
     const { newUserInput, users } = this.state;
     const newUser = {
-      username: newUserInput,
-      password: `${Date.now()}`
+      username: newUserInput
     };
-
-    const response = fetch.addUser(newUser);
+    const response = await fetch.addUser(newUser);
     console.log(response);
     this.setState({
       users: [...users, newUser]

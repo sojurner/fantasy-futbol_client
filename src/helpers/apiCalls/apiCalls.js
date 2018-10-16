@@ -62,19 +62,16 @@ export const getResultsByPlayerClub = async club => {
 export const addUser = async user => {
   const optionsObject = {
     method: 'POST',
-    body: {
-      username: JSON.stringify(user)
-    },
+    body: JSON.stringify(user),
     headers: {
       'Content-Type': 'application/json'
-      // 'Access-Control-Allow-Origin': '*'
     }
   };
-  const response = fetch(
+  const response = await fetch(
     `https://fantasy-futbol.herokuapp.com/api/v1/users`,
     optionsObject
   );
-  return response;
+  return await response.json();
 };
 
 export const getUsers = async () => {
