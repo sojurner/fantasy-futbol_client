@@ -85,22 +85,26 @@ export const getUsers = async () => {
 export const getPlayersByUser = async userInfo => {
   const playerKeys = Object.keys(userInfo).filter(keys =>
     keys.includes('player')
-  );
+	);
   const playerPromises = playerKeys.map(async key => {
+		if (userInfo[key]) {
     const response = await fetch(
       `https://fantasy-futbol.herokuapp.com/api/v1/players/${userInfo[key]}`
     );
     const player = await response.json();
-    return player;
+		return player;
+		}
   });
 
-  const usersPlayers = await Promise.all(playerPromises);
-  return usersPlayers.reduce((playersArr, player) => {
-    player.forEach(obj => {
+	const usersPlayers = await Promise.all(playerPromises);
+  return usersPlayers.reduce((playersArr, user) => {
+		if (user) {
+    user.forEach(obj => {
       playersArr.push(obj);
-    });
+		});
+	}
     return playersArr;
-  }, []);
+	}, []);
 };
 
 export const deleteUser = async id => {
