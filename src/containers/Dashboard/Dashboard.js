@@ -51,10 +51,16 @@ class Dashboard extends Component {
     this.setState({
       users: [...users, newUser]
     });
-  };
+	};
+	
+	deleteUser = async id => {
+		await fetch.deleteUser(id);
+		this.getUsers();
+	}
 
   displayUsers = () => {
     return this.state.users.map((user, index) => {
+			console.log(user)
       return (
         <div className="user-option">
           <NavLink
@@ -64,7 +70,7 @@ class Dashboard extends Component {
           >
             {user.username}
           </NavLink>
-          <i class="fas fa-minus-circle" />
+          <i onClick={() => this.deleteUser(user.id)} class="fas fa-minus-circle" />
         </div>
       );
     });

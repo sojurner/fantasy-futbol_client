@@ -102,3 +102,9 @@ export const getPlayersByUser = async userInfo => {
     return playersArr;
   }, []);
 };
+
+export const deleteUser = async id => {
+	const response = await fetch(`https://fantasy-futbol.herokuapp.com/api/v1/users/${id}`, {method: 'DELETE'});
+	const results = await response.json();
+	console.log(results)
+}
