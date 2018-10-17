@@ -2,8 +2,9 @@ import * as clean from '../dataScraper/dataScraper';
 
 export const getPlayers = async (start, end) => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL +
-      `/api/v1/players?start=${start}&end=${end}`
+    `${
+      process.env.REACT_APP_DATABASE_API_URL
+    }/api/v1/players?start=${start}&end=${end}`
   );
   const players = await response.json();
   const allPlayers = clean.cleanPlayers(players);
@@ -12,7 +13,7 @@ export const getPlayers = async (start, end) => {
 
 export const getAllPlayers = async () => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/players`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players`
   );
   const players = await response.json();
   return clean.cleanPlayers(players);
@@ -20,7 +21,7 @@ export const getAllPlayers = async () => {
 
 export const getCountries = async () => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/countries`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/countries`
   );
   const result = await response.json();
   return result;
@@ -28,7 +29,7 @@ export const getCountries = async () => {
 
 export const getPlayersByCountry = async id => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/countries/${id}/players`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/countries/${id}/players`
   );
   const players = await response.json();
   const playersByCountry = clean.cleanPlayers(players);
@@ -37,7 +38,7 @@ export const getPlayersByCountry = async id => {
 
 export const getPlayer = async id => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/players/${id}`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players/${id}`
   );
   const player = await response.json();
   const playerStats = clean.cleanPlayerStats(player);
@@ -53,7 +54,7 @@ export const getPlayer = async id => {
 
 export const getResultsByPlayerName = async name => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/players?name=${name}`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players?name=${name}`
   );
   const players = await response.json();
 
@@ -63,7 +64,7 @@ export const getResultsByPlayerName = async name => {
 
 export const getResultsByPlayerClub = async club => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/players?club=${club}`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players?club=${club}`
   );
   const players = await response.json();
   const playersByClub = clean.cleanPlayers(players);
@@ -79,7 +80,7 @@ export const addUser = async user => {
     }
   };
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/users`,
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users`,
     optionsObject
   );
   const addedUser = await response.json();
@@ -88,7 +89,7 @@ export const addUser = async user => {
 
 export const getUsers = async () => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/users`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users`
   );
   const users = await response.json();
   return users;
@@ -101,8 +102,9 @@ export const getPlayersByUser = async userInfo => {
   const playerPromises = playerKeys.map(async key => {
     if (userInfo[key]) {
       const response = await fetch(
-        process.env.REACT_APP_DATABASE_API_URL +
-          `/api/v1/players/${userInfo[key]}`
+        `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players/${
+          userInfo[key]
+        }`
       );
       const player = await response.json();
       return player;
@@ -124,7 +126,7 @@ export const getPlayersByUser = async userInfo => {
 
 export const deleteUser = async id => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/users/${id}`,
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users/${id}`,
     { method: 'DELETE' }
   );
   const results = await response.json();
@@ -133,7 +135,7 @@ export const deleteUser = async id => {
 
 export const addPlayerToUser = async (userId, playerId) => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/users/${userId}`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users/${userId}`
   );
   const user = await response.json();
   const userInfo = user[0];
@@ -143,8 +145,9 @@ export const addPlayerToUser = async (userId, playerId) => {
   const matchingKey = playerKeys.find(key => userInfo[key] === null);
   const playerIdToFill = matchingKey.slice(matchingKey.lastIndexOf('_') + 1);
   const responseMessage = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL +
-      `/api/v1/users/${userId}/${playerIdToFill}/players/${playerId}`,
+    `${
+      process.env.REACT_APP_DATABASE_API_URL
+    }/api/v1/users/${userId}/${playerIdToFill}/players/${playerId}`,
     { method: 'PUT' }
   );
   return await responseMessage.json();
@@ -152,7 +155,7 @@ export const addPlayerToUser = async (userId, playerId) => {
 
 export const removePlayerFromUser = async (userId, playerId) => {
   const response = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL + `/api/v1/users/${userId}`
+    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users/${userId}`
   );
   const results = await response.json();
   const playerKeys = Object.keys(results[0]).filter(key =>
@@ -161,8 +164,9 @@ export const removePlayerFromUser = async (userId, playerId) => {
   const matchingKey = playerKeys.find(key => results[0][key] === playerId);
   const playerIdToFill = matchingKey.slice(matchingKey.lastIndexOf('_') + 1);
   const newResponse = await fetch(
-    process.env.REACT_APP_DATABASE_API_URL +
-      `/api/v1/users/${userId}/${playerIdToFill}`,
+    `${
+      process.env.REACT_APP_DATABASE_API_URL
+    }/api/v1/users/${userId}/${playerIdToFill}`,
     { method: 'PUT' }
   );
   const newResult = await newResponse.json();
