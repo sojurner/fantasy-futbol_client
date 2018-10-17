@@ -61,9 +61,15 @@ export class Dashboard extends Component {
     this.getUsers();
   };
 
-  // deletePlayer = async playerIndex => {
-  //   await fetch.addPlayerToUser = async (userId, playerId)
-  // }
+  deletePlayer = async player=> {
+		const {user} = this.props;
+		await fetch.removePlayerFromUser(user, player);
+		this.getUsersPlayers()
+	}
+	
+	getUsersPlayers = () => {
+		
+	}
 
   displayUsers = () => {
     return this.state.users.map((user, index) => {
@@ -94,7 +100,7 @@ export class Dashboard extends Component {
             {player.Name} 
           </p>
           <i
-            onClick={() => this.deletePlayer(index)}
+            onClick={() => this.deletePlayer(player.id)}
             class="fas fa-minus-circle"
           />
         </div>
@@ -106,10 +112,13 @@ export class Dashboard extends Component {
     const { textContent } = e.target;
     const matchedUser = this.state.users.find(
       user => user.username === textContent
-    );
-    this.props.addUser(matchedUser.id);
-    const players = await fetch.getPlayersByUser(matchedUser);
-    this.setState({ usersPlayers: players });
+		);
+		if(matchedUser['id']){
+		this.props.addUser(matchedUser.id);
+		}
+			const players = await fetch.getPlayersByUser(matchedUser);
+		this.setState({ usersPlayers: players });
+		
   };
 
   render() {
@@ -133,12 +142,12 @@ export class Dashboard extends Component {
             </div>
             <nav className="user-nav">
               {this.state.usersPlayers !== [] && usersPlayers}
-              {player !== {} && (
+              {Object.keys(player).length > 0 && (
 								<div className="dashboard-players">
 								<p className="dashboard-players-playername">
 									{player.Name} 
 								</p>
-								<i onClick={() => this.deletePlayer()} class="fas fa-minus-circle" />
+								<i onClick={() => this.deletePlayer(player)} class="fas fa-minus-circle" />
 							</div>
               )}
             </nav>

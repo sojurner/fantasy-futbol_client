@@ -48,7 +48,8 @@ export class Players extends Component {
   addPlayerToUser = async () => {
     const { user, player, setPlayerInfo } = this.props;
 
-    const userMessage = await fetch.addPlayerToUser(user, player);
+		const userMessage = await fetch.addPlayerToUser(user, player);
+		console.log(userMessage)
     setPlayerInfo(userMessage.player[0]);
     this.setState({ open: false });
   };

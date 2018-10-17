@@ -150,9 +150,15 @@ export const addPlayerToUser = async (userId, playerId) => {
   return await responseMessage.json();
 };
 
-export const removePlayerFromUser = async (userId, playerIndex, playerId) => {
+export const removePlayerFromUser = async (userId, playerId) => {
   const response = await fetch(
-    `https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}/${playerIndex}/players/${playerId}`,
-    { method: 'PUT' }
-  );
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}`
+	);
+	const results = await response.json();
+	const playerKeys = Object.keys(results[0]).filter(key => key.includes('player'));
+	const matchingKey = playerKeys.find(key => results[0][key] === playerId);
+	const playerIdToFill = matchingKey.slice(matchingKey.lastIndexOf('_') + 1);
+		const newResponse = await fetch(`https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}/${playerIdToFill}`, {method: 'PUT'});
+		const newResult = await newResponse.json();
+	
 };
