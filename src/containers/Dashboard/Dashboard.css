@@ -4,7 +4,7 @@
 
 .dashboard {
   grid-column: 1 / 2;
-  background-color: #28282C;
+  background-color: #28282c;
   border-right: 2px solid #cacaca; }
 
 .dash-text {
@@ -42,7 +42,7 @@
 .dashboard-players:hover {
   border-left: 3px solid #d19b3d;
   background-color: #4f5b69;
-  transition: all .5s ease; }
+  transition: all 0.5s ease; }
 
 .dashboard-players-playername {
   margin: 5px; }
@@ -72,12 +72,16 @@
 
 .user-option:hover {
   border-left: 3px solid #d19b3d;
-  transition: all .5s ease; }
+  transition: all 0.5s ease; }
+
+.active {
+  border-left: 3px solid #d19b3d;
+  transition: all 0.5s ease; }
 
 .fa-plus-circle {
   color: #5c7fdd;
   cursor: pointer;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   font-size: 1.5rem;
   margin-top: 1rem; }
 

@@ -5,7 +5,7 @@
 
 .dashboard {
   grid-column: 1 / 2;
-  background-color: #28282C;
+  background-color: #28282c;
   border-right: 2px solid rgb(202, 202, 202);
 }
 
@@ -20,13 +20,13 @@
 }
 
 .user-icon {
-	padding: 1rem 0;
-	background-color: #23282e;
+  padding: 1rem 0;
+  background-color: #23282e;
   line-height: 50px;
   display: block;
   text-align: center;
-	font-size: 14px;
-	color: #e1ffff;
+  font-size: 14px;
+  color: #e1ffff;
 }
 
 .user-nav {
@@ -35,67 +35,67 @@
 }
 
 .dashboard-players {
-	font-family: verdana;
-	font-size: 14px;
-	font-weight: 200;
-	background-color: #2e353d;
-	height: 100%;
-	color: #e1ffff;
-	display: flex;
-	justify-content: space-between;
-	padding: 8px;
+  font-family: verdana;
+  font-size: 14px;
+  font-weight: 200;
+  background-color: #2e353d;
+  height: 100%;
+  color: #e1ffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
 }
 
 .dashboard-players:hover {
-	border-left: 3px solid #d19b3d;
+  border-left: 3px solid #d19b3d;
   background-color: #4f5b69;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .dashboard-players-playername {
-	margin: 5px;
+  margin: 5px;
 }
 .user {
-	font-family: verdana;
-	font-size: 18px;
-	font-weight: 400;
-	background-color: #2e353d;
-	height: 100%;
-	color: #e1ffff;
-	display: flex;
-	justify-content: space-between;
-	padding: 8px;
-	text-decoration: none;
+  font-family: verdana;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #2e353d;
+  height: 100%;
+  color: #e1ffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  text-decoration: none;
 }
 
-
 .user-option {
-	font-family: verdana;
-	font-size: 14px;
-	font-weight: 200;
-	background-color: #2e353d;
-	height: 100%;
-	color: #e1ffff;
-	display: flex;
-	justify-content: space-between;
-	padding: 8px;
+  font-family: verdana;
+  font-size: 14px;
+  font-weight: 200;
+  background-color: #2e353d;
+  height: 100%;
+  color: #e1ffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
 }
 
 .user-option:hover {
-	border-left: 3px solid #d19b3d;
-  transition: all .5s ease;
+  border-left: 3px solid #d19b3d;
+  transition: all 0.5s ease;
 }
 
 .active {
-
+  border-left: 3px solid #d19b3d;
+  transition: all 0.5s ease;
 }
 
 .fa-plus-circle {
   color: rgb(92, 127, 221);
   cursor: pointer;
-  margin-right: .5rem;
-	font-size: 1.5rem;
-	margin-top: 1rem;
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 .fa-plus-circle:hover {
@@ -116,12 +116,12 @@
 
 .fa-minus-circle {
   align-self: center;
-	font-size: 1.5rem;
-	cursor: pointer;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .fa-minus-circle:hover {
-	color: white;
+  color: white;
 }
 
 .username-input {
@@ -129,4 +129,3 @@
   width: 10rem;
   margin: auto;
 }
-

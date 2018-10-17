@@ -61,15 +61,13 @@ export class Dashboard extends Component {
     this.getUsers();
   };
 
-  deletePlayer = async player=> {
-		const {user} = this.props;
-		await fetch.removePlayerFromUser(user, player);
-		this.getUsersPlayers()
-	}
-	
-	getUsersPlayers = () => {
-		
-	}
+  deletePlayer = async player => {
+    const { user } = this.props;
+    await fetch.removePlayerFromUser(user, player);
+    this.getUsersPlayers();
+  };
+
+  getUsersPlayers = () => {};
 
   displayUsers = () => {
     return this.state.users.map((user, index) => {
@@ -82,7 +80,7 @@ export class Dashboard extends Component {
           >
             {user.username}
           </NavLink>
-					
+
           <i
             onClick={() => this.deleteUser(user.id)}
             className="fas fa-minus-circle"
@@ -96,9 +94,7 @@ export class Dashboard extends Component {
     return this.state.usersPlayers.map((player, index) => {
       return (
         <div className="dashboard-players">
-          <p className="dashboard-players-playername">
-            {player.Name} 
-          </p>
+          <p className="dashboard-players-playername">{player.Name}</p>
           <i
             onClick={() => this.deletePlayer(player.id)}
             class="fas fa-minus-circle"
@@ -110,15 +106,15 @@ export class Dashboard extends Component {
 
   getUsersPlayers = async e => {
     const { textContent } = e.target;
+    console.log(textContent);
     const matchedUser = this.state.users.find(
       user => user.username === textContent
-		);
-		if(matchedUser['id']){
-		this.props.addUser(matchedUser.id);
-		}
-			const players = await fetch.getPlayersByUser(matchedUser);
-		this.setState({ usersPlayers: players });
-		
+    );
+    if (matchedUser['id']) {
+      this.props.addUser(matchedUser.id);
+    }
+    const players = await fetch.getPlayersByUser(matchedUser);
+    this.setState({ usersPlayers: players });
   };
 
   render() {
@@ -143,12 +139,13 @@ export class Dashboard extends Component {
             <nav className="user-nav">
               {this.state.usersPlayers !== [] && usersPlayers}
               {Object.keys(player).length > 0 && (
-								<div className="dashboard-players">
-								<p className="dashboard-players-playername">
-									{player.Name} 
-								</p>
-								<i onClick={() => this.deletePlayer(player)} class="fas fa-minus-circle" />
-							</div>
+                <div className="dashboard-players">
+                  <p className="dashboard-players-playername">{player.Name}</p>
+                  <i
+                    onClick={() => this.deletePlayer(player)}
+                    class="fas fa-minus-circle"
+                  />
+                </div>
               )}
             </nav>
           </div>

@@ -174,20 +174,22 @@ export class Players extends Component {
       clubSuggestions
     } = this.state;
 
-    return (
-      <div className="players-table">
-        <div className="filter-players">
-          <FilterBar
-            filterPlayersByCountry={this.filterPlayersByCountry}
-            searchPlayers={this.searchPlayers}
-            handleChange={this.handleChange}
-            currentSearchName={searchedName}
-            currentSearchClub={searchedClub}
-            countries={countries}
-            playerSuggestions={playerSuggestions.slice(0, 5)}
-            clubSuggestions={clubSuggestions.slice(0, 5)}
-          />
-          {currentPlayers ? (
+    if (!currentPlayers) {
+      return <img src="https://mycourtcircuit.be/images/PleaseWait.gif" />;
+    } else {
+      return (
+        <div className="players-table">
+          <div className="filter-players">
+            <FilterBar
+              filterPlayersByCountry={this.filterPlayersByCountry}
+              searchPlayers={this.searchPlayers}
+              handleChange={this.handleChange}
+              currentSearchName={searchedName}
+              currentSearchClub={searchedClub}
+              countries={countries}
+              playerSuggestions={playerSuggestions.slice(0, 5)}
+              clubSuggestions={clubSuggestions.slice(0, 5)}
+            />
             <table>
               <tbody>
                 <tr>
@@ -204,46 +206,44 @@ export class Players extends Component {
                 {currentPlayers}
               </tbody>
             </table>
-          ) : (
-            <img src={`require(${'../../images/loading.gif'})`} />
-          )}
-          <div className="next-prev-btns">
-            {this.state.startingPoint !== 0 && (
+            <div className="next-prev-btns">
+              {this.state.startingPoint !== 0 && (
+                <button
+                  className="Previouse-page"
+                  onClick={() => this.changeOffset(this.state.offset - 30)}
+                >
+                  Previous Page
+                </button>
+              )}
               <button
-                className="Previouse-page"
-                onClick={() => this.changeOffset(this.state.offset - 30)}
+                className="next-page"
+                onClick={() => this.changeOffset(offset + 30)}
               >
-                Previous Page
+                Next Page
               </button>
-            )}
-            <button
-              className="next-page"
-              onClick={() => this.changeOffset(offset + 30)}
-            >
-              Next Page
-            </button>
+            </div>
           </div>
-        </div>
 
-        <Modal open={open} onClose={this.onCloseModal} center>
-          <div className="modal-header">
-            <button
-              className="add-player-button"
-              onClick={this.addPlayerToUser}
-            >
-              Add {'   '}
-              <i className="fas fa-check-circle" />
-            </button>
-            <h2 className="player-name">{modalInfo.Name}</h2>
-          </div>
-          <PlayerModal
-            stats={modalStats}
-            statType={modalStatType}
-            info={modalInfo}
-          />
-        </Modal>
-      </div>
-    );
+          <Modal open={open} onClose={this.onCloseModal} center>
+            <div className="modal-header">
+              <button
+                className="add-player-button"
+                onClick={this.addPlayerToUser}
+              >
+                Add {'   '}
+                <i className="fas fa-check-circle" />
+              </button>
+              <h2 className="player-name">{modalInfo.Name}</h2>
+            </div>
+            <PlayerModal
+              stats={modalStats}
+              statType={modalStatType}
+              info={modalInfo}
+            />
+          </Modal>
+        </div>
+      );
+    }
   }
 }
 
