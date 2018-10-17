@@ -19,7 +19,6 @@ export const FilterBar = ({
           className="suggestion-row"
           onClick={event => searchPlayers(event, 'name')}
         >
-          <img className="suggest-photo" src={suggestion.Photo} height="30" />{' '}
           <p className="suggest-name">{suggestion.Name}</p>
         </span>
       );
@@ -40,6 +39,7 @@ export const FilterBar = ({
   });
   return (
     <div className="filter-bar">
+      <h3 className="filter-title">Filter Players</h3>
       <select onChange={event => filterPlayersByCountry(event.target.value)}>
         {countries}
       </select>

@@ -8,11 +8,11 @@
 
 .filter-players {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   height: 90vh; }
 
 table {
-  max-width: 746px;
+  max-width: 760px;
   grid-column: 1 / 2;
   background-color: #ededed;
   border-collapse: collapse; }
@@ -60,4 +60,5 @@ th {
 
 .next-prev-btns {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  max-width: 760px; }

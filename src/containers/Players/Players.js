@@ -48,8 +48,8 @@ export class Players extends Component {
   addPlayerToUser = async () => {
     const { user, player, setPlayerInfo } = this.props;
 
-		const userMessage = await fetch.addPlayerToUser(user, player);
-		console.log(userMessage)
+    const userMessage = await fetch.addPlayerToUser(user, player);
+    console.log(userMessage);
     setPlayerInfo(userMessage.player[0]);
     this.setState({ open: false });
   };
@@ -65,6 +65,8 @@ export class Players extends Component {
         {country.name}
       </option>
     ));
+
+    results.unshift(<option key={'hi'}>Select Country</option>);
     this.setState({ countries: results });
   };
 
@@ -202,23 +204,23 @@ export class Players extends Component {
               {currentPlayers}
             </tbody>
           </table>
-        <div className="next-prev-btns">
-        {this.state.startingPoint !== 0 && (
-					<button
-					className="Previouse-page"
-					onClick={() => this.changeOffset(this.state.offset - 30)}
-          >
-            Previous Page
-          </button>
-				)}
-				<button
-          className="next-page"
-          onClick={() => this.changeOffset(offset + 30)}
-					>
-          Next Page
-        </button>
-				</div>
-					</div>
+          <div className="next-prev-btns">
+            {this.state.startingPoint !== 0 && (
+              <button
+                className="Previouse-page"
+                onClick={() => this.changeOffset(this.state.offset - 30)}
+              >
+                Previous Page
+              </button>
+            )}
+            <button
+              className="next-page"
+              onClick={() => this.changeOffset(offset + 30)}
+            >
+              Next Page
+            </button>
+          </div>
+        </div>
 
         <Modal open={open} onClose={this.onCloseModal} center>
           <i class="fas fa-user-circle" onClick={this.addPlayerToUser}>
