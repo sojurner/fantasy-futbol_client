@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 
-import Splash from '../../components/Splash/Splash';
-import Home from '../../components/Home/Home';
 import Dashboard from '../../containers/Dashboard/Dashboard';
 import Players from '../../containers/Players/Players';
 
+import './App.css';
 class App extends Component {
   render() {
     return (
@@ -21,7 +19,6 @@ class App extends Component {
         <div className="body">
           <Dashboard />
           <Players />
-          {/* <h1 className="futbol-title">Fantasy Fútbol</h1> */}
         </div>
       </div>
     );

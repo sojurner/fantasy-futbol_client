@@ -19,7 +19,6 @@ export class Dashboard extends Component {
       message: {}
     };
   }
-  componentDidUpdate() {}
 
   componentDidMount() {
     this.setState({ message: this.props.message });
@@ -51,7 +50,7 @@ export class Dashboard extends Component {
     const newUser = {
       username: newUserInput
     };
-    const response = await fetch.addUser(newUser);
+    await fetch.addUser(newUser);
     this.setState({
       users: [...users, newUser]
     });
@@ -69,7 +68,7 @@ export class Dashboard extends Component {
   displayUsers = () => {
     return this.state.users.map((user, index) => {
       return (
-        <div className="user-option">
+        <div key={`user-${index}`} className="user-option">
           <NavLink
             to={`/user${index}`}
             onClick={this.getUsersPlayers}
@@ -78,8 +77,8 @@ export class Dashboard extends Component {
             {user.username}
           </NavLink>
           <i
-            onClick={() => this.deleteUser(index)}
-            class="fas fa-minus-circle"
+            onClick={() => this.deleteUser(user.id)}
+            className="fas fa-minus-circle"
           />
         </div>
       );
@@ -94,7 +93,10 @@ export class Dashboard extends Component {
           <p className="dashboard-players">
             {player.Name} <span>{player.Overall}</span>
           </p>
-          <i onClick={() => this.deletePlayer()} class="fas fa-minus-circle" />
+          <i
+            onClick={() => this.deletePlayer(index)}
+            class="fas fa-minus-circle"
+          />
         </div>
       );
     });
@@ -114,7 +116,6 @@ export class Dashboard extends Component {
     const users = this.displayUsers();
     const usersPlayers = this.displayUsersPlayers();
     const { player } = this.props;
-    console.log(player);
     return (
       <BrowserRouter>
         <section className="dashboard">

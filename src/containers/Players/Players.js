@@ -7,7 +7,6 @@ import { PlayerRow } from '../../components/PlayerRow/PlayerRow';
 import { PlayerModal } from '../../components/PlayerModal/PlayerModal';
 import { FilterBar } from '../../components/FilterBar/FilterBar';
 import * as playerActions from '../../actions/playerActions';
-import { setMessage } from '../../actions/messageActions';
 
 import './Players.css';
 import playerData from '../../data/playerData.json';
@@ -32,7 +31,7 @@ export class Players extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   async componentDidMount() {
@@ -50,7 +49,6 @@ export class Players extends Component {
     const { user, player, setPlayerInfo } = this.props;
 
     const userMessage = await fetch.addPlayerToUser(user, player);
-    console.log(userMessage);
     setPlayerInfo(userMessage.player[0]);
     this.setState({ open: false });
   };
@@ -191,7 +189,7 @@ export class Players extends Component {
             <tbody>
               <tr>
                 <th>
-                  <i class="fas fa-futbol" />
+                  <i className="fas fa-futbol" />
                 </th>
                 <th className="player-name">Player Name</th>
                 <th>Nationality</th>
@@ -238,14 +236,12 @@ export class Players extends Component {
 
 const mapStateToProps = state => ({
   user: state.user,
-  player: state.player.id,
-  message: state.message
+  player: state.player.id
 });
 
 const mapDispatchToProps = dispatch => ({
   setPlayerInfo: player => dispatch(playerActions.setPlayerInfo(player)),
-  addPlayer: player => dispatch(playerActions.setCurrentPlayer(player)),
-  addMessage: message => dispatch(setMessage(message))
+  addPlayer: player => dispatch(playerActions.setCurrentPlayer(player))
 });
 
 export default connect(
