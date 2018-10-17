@@ -91,10 +91,8 @@ export class Dashboard extends Component {
     return this.state.usersPlayers.map((player, index) => {
       return (
         <div className="dashboard-players">
-          {/* <img src={`${player.Photo}`} /> */}
           <p className="dashboard-players-playername">
             {player.Name} 
-						{/* <span>{player.Overall}</span> */}
           </p>
           <i onClick={() => this.deletePlayer()} class="fas fa-minus-circle" />
         </div>
@@ -135,12 +133,12 @@ export class Dashboard extends Component {
             <nav className="user-nav">
               {this.state.usersPlayers !== [] && usersPlayers}
               {player !== {} && (
-                <div>
-                  <img src={`${player.Photo}`} />
-                  <p className="dashboard-players">
-                    {player.Name} <span>{player.Overall}</span>
-                  </p>
-                </div>
+								<div className="dashboard-players">
+								<p className="dashboard-players-playername">
+									{player.Name} 
+								</p>
+								<i onClick={() => this.deletePlayer()} class="fas fa-minus-circle" />
+							</div>
               )}
             </nav>
           </div>
