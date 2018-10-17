@@ -4,8 +4,7 @@
 
 .dashboard {
   grid-column: 1 / 2;
-  background-color: #f0f0f0;
-  margin: 0 1rem;
+  background-color: #28282C;
   border-right: 2px solid #cacaca; }
 
 .dash-text {
@@ -18,49 +17,72 @@
 
 .user-icon {
   padding: 1rem 0;
-  border-bottom: 1px solid #c0bfbf; }
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #e1ffff; }
 
 .user-nav {
   display: flex;
   flex-direction: column; }
 
-.user,
-.players,
 .dashboard-players {
-  text-decoration-line: none;
-  padding: 0.5rem 0.7rem;
-  font-family: robot;
-  font-size: 1.1rem;
-  color: #5a5a5a;
-  letter-spacing: 0.5px; }
+  font-family: verdana;
+  font-size: 14px;
+  font-weight: 200;
+  background-color: #2e353d;
+  height: 100%;
+  color: #e1ffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px; }
+
+.dashboard-players:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  transition: all .5s ease; }
+
+.dashboard-players-playername {
+  margin: 5px; }
 
 .user {
-  margin: 0 0 0 1.1rem;
-  width: 60%;
-  font-size: 1.3rem;
-  letter-spacing: 1.2px; }
-
-.user:hover {
-  background-color: #e2e0e0; }
+  font-family: verdana;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #2e353d;
+  height: 100%;
+  color: #e1ffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  text-decoration: none; }
 
 .user-option {
-  padding: 1rem 0;
-  display: flex; }
+  font-family: verdana;
+  font-size: 14px;
+  font-weight: 200;
+  background-color: #2e353d;
+  height: 100%;
+  color: #e1ffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px; }
 
-.active {
-  border-left: 2px solid #3e7fdf;
-  background-color: #ebe8e8; }
+.user-option:hover {
+  border-left: 3px solid #d19b3d;
+  transition: all .5s ease; }
 
 .fa-plus-circle {
   color: #5c7fdd;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: .5rem;
   font-size: 1.5rem;
-  margin-top: 0.2rem; }
+  margin-top: 1rem; }
 
 .fa-plus-circle:hover {
   color: #3e61c0;
-  animation: pulse 1s linear infinite;
   border-radius: 50%;
   border-color: #3e7fdf; }
 
@@ -74,17 +96,13 @@
 
 .fa-minus-circle {
   align-self: center;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  cursor: pointer; }
+
+.fa-minus-circle:hover {
+  color: white; }
 
 .username-input {
   height: 2rem;
   width: 10rem;
   margin: auto; }
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(23, 173, 173, 0.637); }
-  50% {
-    box-shadow: 0 0 0 7px rgba(17, 221, 221, 0.493); }
-  100% {
-    box-shadow: 0 0 0 0 rgba(128, 255, 255, 0.61); } }

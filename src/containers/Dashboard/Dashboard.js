@@ -78,7 +78,7 @@ export class Dashboard extends Component {
             {user.username}
           </NavLink>
           <i
-            onClick={() => this.deleteUser(index)}
+            onClick={() => this.deleteUser(user.id)}
             class="fas fa-minus-circle"
           />
         </div>
@@ -89,10 +89,11 @@ export class Dashboard extends Component {
   displayUsersPlayers = () => {
     return this.state.usersPlayers.map((player, index) => {
       return (
-        <div>
-          <img src={`${player.Photo}`} />
-          <p className="dashboard-players">
-            {player.Name} <span>{player.Overall}</span>
+        <div className="dashboard-players">
+          {/* <img src={`${player.Photo}`} /> */}
+          <p className="dashboard-players-playername">
+            {player.Name} 
+						{/* <span>{player.Overall}</span> */}
           </p>
           <i onClick={() => this.deletePlayer()} class="fas fa-minus-circle" />
         </div>

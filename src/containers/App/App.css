@@ -4,7 +4,8 @@
 
 .logo {
   margin: 0;
-  background-color: #303949;
+  background-color: #343439;
+  border-bottom: 2px solid #cfcfcf;
   color: wheat;
   font-family: patua;
   padding: 0.5rem 1.5rem; }
