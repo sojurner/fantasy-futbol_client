@@ -1,0 +1,818 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterBar should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    clubSuggestions={
+        Array [
+            "Chelsea",
+          ]
+    }
+    countries={
+        Array [
+            Object {
+              "id": "1",
+              "name": "Argentina",
+            },
+          ]
+    }
+    currentSearchClub="chelsea"
+    currentSearchName="messi"
+    filterPlayersByCountry={[Function]}
+    handleChange={[Function]}
+    playerSuggestions={
+        Array [
+            Object {
+              "Name": "L. Messi",
+              "Photo": "https://cdn.sofifa.org/players/4/18/158023.png",
+            },
+            Object {
+              "Name": "N. Messiniti",
+              "Photo": "https://cdn.sofifa.org/players/4/18/236341.png",
+            },
+          ]
+    }
+    searchPlayers={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <select
+          onChange={[Function]}
+>
+          Object {
+                    "id": "1",
+                    "name": "Argentina",
+                  }
+</select>,
+        <form>
+          <input
+                    className="name-search"
+                    name="searchedName"
+                    onChange={[Function]}
+                    placeholder="Search by name"
+                    value="messi"
+          />
+</form>,
+        <div
+          className="suggestion-box"
+>
+          <span
+                    className="suggestion-row"
+                    onClick={[Function]}
+          >
+                    <img
+                              className="suggest-photo"
+                              height="30"
+                              src="https://cdn.sofifa.org/players/4/18/158023.png"
+                    />
+                     
+                    <p
+                              className="suggest-name"
+                    >
+                              L. Messi
+                    </p>
+          </span>
+          <span
+                    className="suggestion-row"
+                    onClick={[Function]}
+          >
+                    <img
+                              className="suggest-photo"
+                              height="30"
+                              src="https://cdn.sofifa.org/players/4/18/236341.png"
+                    />
+                     
+                    <p
+                              className="suggest-name"
+                    >
+                              N. Messiniti
+                    </p>
+          </span>
+</div>,
+        <form>
+          <input
+                    className="club-search"
+                    name="searchedClub"
+                    onChange={[Function]}
+                    placeholder="Search by club"
+                    value="chelsea"
+          />
+</form>,
+        <div
+          className="suggestion-box"
+>
+          <span
+                    className="suggestion-row"
+                    onClick={[Function]}
+          >
+                    <p
+                              className="suggest-club"
+                    >
+                              Chelsea
+                    </p>
+          </span>
+</div>,
+      ],
+      "className": "filter-bar",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            Object {
+              "id": "1",
+              "name": "Argentina",
+            },
+          ],
+          "onChange": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "id": "1",
+            "name": "Argentina",
+          },
+        ],
+        "type": "select",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <input
+            className="name-search"
+            name="searchedName"
+            onChange={[Function]}
+            placeholder="Search by name"
+            value="messi"
+/>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "name-search",
+            "name": "searchedName",
+            "onChange": [Function],
+            "placeholder": "Search by name",
+            "value": "messi",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        "type": "form",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="suggestion-row"
+              onClick={[Function]}
+>
+              <img
+                            className="suggest-photo"
+                            height="30"
+                            src="https://cdn.sofifa.org/players/4/18/158023.png"
+              />
+               
+              <p
+                            className="suggest-name"
+              >
+                            L. Messi
+              </p>
+</span>,
+            <span
+              className="suggestion-row"
+              onClick={[Function]}
+>
+              <img
+                            className="suggest-photo"
+                            height="30"
+                            src="https://cdn.sofifa.org/players/4/18/236341.png"
+              />
+               
+              <p
+                            className="suggest-name"
+              >
+                            N. Messiniti
+              </p>
+</span>,
+          ],
+          "className": "suggestion-box",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  className="suggest-photo"
+                  height="30"
+                  src="https://cdn.sofifa.org/players/4/18/158023.png"
+/>,
+                " ",
+                <p
+                  className="suggest-name"
+>
+                  L. Messi
+</p>,
+              ],
+              "className": "suggestion-row",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "suggest-photo",
+                  "height": "30",
+                  "src": "https://cdn.sofifa.org/players/4/18/158023.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "L. Messi",
+                  "className": "suggest-name",
+                },
+                "ref": null,
+                "rendered": "L. Messi",
+                "type": "p",
+              },
+            ],
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  className="suggest-photo"
+                  height="30"
+                  src="https://cdn.sofifa.org/players/4/18/236341.png"
+/>,
+                " ",
+                <p
+                  className="suggest-name"
+>
+                  N. Messiniti
+</p>,
+              ],
+              "className": "suggestion-row",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "suggest-photo",
+                  "height": "30",
+                  "src": "https://cdn.sofifa.org/players/4/18/236341.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "N. Messiniti",
+                  "className": "suggest-name",
+                },
+                "ref": null,
+                "rendered": "N. Messiniti",
+                "type": "p",
+              },
+            ],
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <input
+            className="club-search"
+            name="searchedClub"
+            onChange={[Function]}
+            placeholder="Search by club"
+            value="chelsea"
+/>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "club-search",
+            "name": "searchedClub",
+            "onChange": [Function],
+            "placeholder": "Search by club",
+            "value": "chelsea",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        "type": "form",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="suggestion-row"
+              onClick={[Function]}
+>
+              <p
+                            className="suggest-club"
+              >
+                            Chelsea
+              </p>
+</span>,
+          ],
+          "className": "suggestion-box",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p
+                className="suggest-club"
+>
+                Chelsea
+</p>,
+              "className": "suggestion-row",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Chelsea",
+                "className": "suggest-club",
+              },
+              "ref": null,
+              "rendered": "Chelsea",
+              "type": "p",
+            },
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <select
+            onChange={[Function]}
+>
+            Object {
+                        "id": "1",
+                        "name": "Argentina",
+                      }
+</select>,
+          <form>
+            <input
+                        className="name-search"
+                        name="searchedName"
+                        onChange={[Function]}
+                        placeholder="Search by name"
+                        value="messi"
+            />
+</form>,
+          <div
+            className="suggestion-box"
+>
+            <span
+                        className="suggestion-row"
+                        onClick={[Function]}
+            >
+                        <img
+                                    className="suggest-photo"
+                                    height="30"
+                                    src="https://cdn.sofifa.org/players/4/18/158023.png"
+                        />
+                         
+                        <p
+                                    className="suggest-name"
+                        >
+                                    L. Messi
+                        </p>
+            </span>
+            <span
+                        className="suggestion-row"
+                        onClick={[Function]}
+            >
+                        <img
+                                    className="suggest-photo"
+                                    height="30"
+                                    src="https://cdn.sofifa.org/players/4/18/236341.png"
+                        />
+                         
+                        <p
+                                    className="suggest-name"
+                        >
+                                    N. Messiniti
+                        </p>
+            </span>
+</div>,
+          <form>
+            <input
+                        className="club-search"
+                        name="searchedClub"
+                        onChange={[Function]}
+                        placeholder="Search by club"
+                        value="chelsea"
+            />
+</form>,
+          <div
+            className="suggestion-box"
+>
+            <span
+                        className="suggestion-row"
+                        onClick={[Function]}
+            >
+                        <p
+                                    className="suggest-club"
+                        >
+                                    Chelsea
+                        </p>
+            </span>
+</div>,
+        ],
+        "className": "filter-bar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              Object {
+                "id": "1",
+                "name": "Argentina",
+              },
+            ],
+            "onChange": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "id": "1",
+              "name": "Argentina",
+            },
+          ],
+          "type": "select",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <input
+              className="name-search"
+              name="searchedName"
+              onChange={[Function]}
+              placeholder="Search by name"
+              value="messi"
+/>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "name-search",
+              "name": "searchedName",
+              "onChange": [Function],
+              "placeholder": "Search by name",
+              "value": "messi",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "type": "form",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="suggestion-row"
+                onClick={[Function]}
+>
+                <img
+                                className="suggest-photo"
+                                height="30"
+                                src="https://cdn.sofifa.org/players/4/18/158023.png"
+                />
+                 
+                <p
+                                className="suggest-name"
+                >
+                                L. Messi
+                </p>
+</span>,
+              <span
+                className="suggestion-row"
+                onClick={[Function]}
+>
+                <img
+                                className="suggest-photo"
+                                height="30"
+                                src="https://cdn.sofifa.org/players/4/18/236341.png"
+                />
+                 
+                <p
+                                className="suggest-name"
+                >
+                                N. Messiniti
+                </p>
+</span>,
+            ],
+            "className": "suggestion-box",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    className="suggest-photo"
+                    height="30"
+                    src="https://cdn.sofifa.org/players/4/18/158023.png"
+/>,
+                  " ",
+                  <p
+                    className="suggest-name"
+>
+                    L. Messi
+</p>,
+                ],
+                "className": "suggestion-row",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "suggest-photo",
+                    "height": "30",
+                    "src": "https://cdn.sofifa.org/players/4/18/158023.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "L. Messi",
+                    "className": "suggest-name",
+                  },
+                  "ref": null,
+                  "rendered": "L. Messi",
+                  "type": "p",
+                },
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    className="suggest-photo"
+                    height="30"
+                    src="https://cdn.sofifa.org/players/4/18/236341.png"
+/>,
+                  " ",
+                  <p
+                    className="suggest-name"
+>
+                    N. Messiniti
+</p>,
+                ],
+                "className": "suggestion-row",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "suggest-photo",
+                    "height": "30",
+                    "src": "https://cdn.sofifa.org/players/4/18/236341.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "N. Messiniti",
+                    "className": "suggest-name",
+                  },
+                  "ref": null,
+                  "rendered": "N. Messiniti",
+                  "type": "p",
+                },
+              ],
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <input
+              className="club-search"
+              name="searchedClub"
+              onChange={[Function]}
+              placeholder="Search by club"
+              value="chelsea"
+/>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "club-search",
+              "name": "searchedClub",
+              "onChange": [Function],
+              "placeholder": "Search by club",
+              "value": "chelsea",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "type": "form",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="suggestion-row"
+                onClick={[Function]}
+>
+                <p
+                                className="suggest-club"
+                >
+                                Chelsea
+                </p>
+</span>,
+            ],
+            "className": "suggestion-box",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p
+                  className="suggest-club"
+>
+                  Chelsea
+</p>,
+                "className": "suggestion-row",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Chelsea",
+                  "className": "suggest-club",
+                },
+                "ref": null,
+                "rendered": "Chelsea",
+                "type": "p",
+              },
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
