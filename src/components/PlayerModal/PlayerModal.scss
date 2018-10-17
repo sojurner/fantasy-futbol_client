@@ -15,6 +15,23 @@
   outline: 0;
 }
 
+.add-player-button {
+  padding: 0.4rem 1rem;
+  color: white;
+  background-color: #01a766;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  margin-right: 3rem;
+}
+
+.player-name {
+  margin: 0.8rem;
+}
+.modal-header {
+  display: flex;
+  flex-direction: row;
+}
+
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(157, 158, 158, 0.367);

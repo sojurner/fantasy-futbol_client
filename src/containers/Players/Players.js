@@ -187,23 +187,26 @@ export class Players extends Component {
             playerSuggestions={playerSuggestions.slice(0, 5)}
             clubSuggestions={clubSuggestions.slice(0, 5)}
           />
-
-          <table>
-            <tbody>
-              <tr>
-                <th>
-                  <i className="fas fa-futbol" />
-                </th>
-                <th className="player-name">Player Name</th>
-                <th>Nationality</th>
-                <th>Positions</th>
-                <th>Club</th>
-                <th>Overall</th>
-                <th>Value</th>
-              </tr>
-              {currentPlayers}
-            </tbody>
-          </table>
+          {currentPlayers ? (
+            <table>
+              <tbody>
+                <tr>
+                  <th>
+                    <i className="fas fa-futbol" />
+                  </th>
+                  <th className="player-name">Player Name</th>
+                  <th>Nationality</th>
+                  <th>Positions</th>
+                  <th>Club</th>
+                  <th>Overall</th>
+                  <th>Value</th>
+                </tr>
+                {currentPlayers}
+              </tbody>
+            </table>
+          ) : (
+            <img src={`require(${'../../images/loading.gif'})`} />
+          )}
           <div className="next-prev-btns">
             {this.state.startingPoint !== 0 && (
               <button
@@ -223,10 +226,16 @@ export class Players extends Component {
         </div>
 
         <Modal open={open} onClose={this.onCloseModal} center>
-          <i class="fas fa-user-circle" onClick={this.addPlayerToUser}>
-            Add {modalInfo.Name}
-          </i>
-
+          <div className="modal-header">
+            <button
+              className="add-player-button"
+              onClick={this.addPlayerToUser}
+            >
+              Add {'   '}
+              <i className="fas fa-check-circle" />
+            </button>
+            <h2 className="player-name">{modalInfo.Name}</h2>
+          </div>
           <PlayerModal
             stats={modalStats}
             statType={modalStatType}
