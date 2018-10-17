@@ -12,7 +12,8 @@ tr {
 
 tr:hover {
   color: black;
-  background-color: #e4e4e2; }
+  background-color: #e4e4e2;
+  transition: .1s; }
 
 td {
   padding: 0 0.8rem;

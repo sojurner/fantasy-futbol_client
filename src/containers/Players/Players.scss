@@ -4,26 +4,26 @@
 }
 
 .players-table {
+	background-color: rgb(207, 207, 207);
   grid-column: 2 / 3;
 }
 
 .filter-players {
   display: grid;
-  background-color: rgb(207, 207, 207);
   grid-template-columns: 2fr 1fr;
-  height: 100vh;
+  height: 90vh;
 }
 
 table {
-  margin: 1rem auto;
+  max-width: 746px;
   grid-column: 1 / 2;
-  background-color: white;
+  background-color: rgb(237, 237, 237);
   border-collapse: collapse;
 }
 
 tbody {
   display: block;
-  height: 90vh;
+  height: 85vh;
   overflow-y: scroll;
 }
 
@@ -31,12 +31,45 @@ th {
   font-size: 1rem;
   text-align: center;
   background: rgb(207, 206, 206);
-  padding: 0.5rem;
+  padding: 0.8rem;
   font-family: noto;
-  color: rgb(187, 184, 184);
-  background-color: #303949;
+  color: rgb(250, 250, 250);
+  background-color: #676767;
 }
 
 .player-name {
   text-align: left;
+}
+
+.next-page {
+padding: 10px 20px;
+font-size: 16px;
+background-color: #505e76;
+color: white;
+font-weight: 700;
+width: 50%;
+cursor: pointer;
+}
+
+.next-page:hover {
+background-color: #6b7fa0;
+}
+
+.Previouse-page {
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: #505e76;
+	color: white;
+	font-weight: 700;
+	width: 50%;
+	cursor: pointer;
+}
+
+.Previouse-page:hover {
+	background-color: #6b7fa0;
+	}
+
+.next-prev-btns {
+	display: flex;
+	justify-content: space-between;
 }

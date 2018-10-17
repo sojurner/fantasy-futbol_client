@@ -26,7 +26,7 @@ export const PlayerRow = ({
       <td>{Club}</td>
       <td>{Overall}</td>
       <td>{Value}</td>
-      <td>{Wage}</td>
+      {/* <td>{Wage}</td> */}
     </tr>
   );
 };

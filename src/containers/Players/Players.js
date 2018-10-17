@@ -197,26 +197,27 @@ export class Players extends Component {
                 <th>Club</th>
                 <th>Overall</th>
                 <th>Value</th>
-                <th>Wage</th>
               </tr>
               {currentPlayers}
             </tbody>
           </table>
-        </div>
-        <button
-          className="next-page"
-          onClick={() => this.changeOffset(offset + 30)}
-        >
-          Next Page
-        </button>
+        <div className="next-prev-btns">
         {this.state.startingPoint !== 0 && (
-          <button
-            className="Previouse-page"
-            onClick={() => this.changeOffset(this.state.offset - 30)}
+					<button
+					className="Previouse-page"
+					onClick={() => this.changeOffset(this.state.offset - 30)}
           >
             Previous Page
           </button>
-        )}
+				)}
+				<button
+          className="next-page"
+          onClick={() => this.changeOffset(offset + 30)}
+					>
+          Next Page
+        </button>
+				</div>
+					</div>
 
         <Modal open={open} onClose={this.onCloseModal} center>
           <i class="fas fa-user-circle" onClick={this.addPlayerToUser}>
