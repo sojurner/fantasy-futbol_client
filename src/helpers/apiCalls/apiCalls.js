@@ -2,9 +2,7 @@ import * as clean from '../dataScraper/dataScraper';
 
 export const getPlayers = async (start, end) => {
   const response = await fetch(
-    `${
-      process.env.REACT_APP_DATABASE_API_URL
-    }/api/v1/players?start=${start}&end=${end}`
+    `https://fantasy-futbol.herokuapp.com/api/v1/players?start=${start}&end=${end}`
   );
   const players = await response.json();
   const allPlayers = clean.cleanPlayers(players);
@@ -13,7 +11,7 @@ export const getPlayers = async (start, end) => {
 
 export const getAllPlayers = async () => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players`
+    `https://fantasy-futbol.herokuapp.com/api/v1/players`
   );
   const players = await response.json();
   return clean.cleanPlayers(players);
@@ -21,7 +19,7 @@ export const getAllPlayers = async () => {
 
 export const getCountries = async () => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/countries`
+    `https://fantasy-futbol.herokuapp.com/api/v1/countries`
   );
   const result = await response.json();
   return result;
@@ -29,7 +27,7 @@ export const getCountries = async () => {
 
 export const getPlayersByCountry = async id => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/countries/${id}/players`
+    `https://fantasy-futbol.herokuapp.com/api/v1/countries/${id}/players`
   );
   const players = await response.json();
   const playersByCountry = clean.cleanPlayers(players);
@@ -38,7 +36,7 @@ export const getPlayersByCountry = async id => {
 
 export const getPlayer = async id => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players/${id}`
+    `https://fantasy-futbol.herokuapp.com/api/v1/players/${id}`
   );
   const player = await response.json();
   const playerStats = clean.cleanPlayerStats(player);
@@ -54,7 +52,7 @@ export const getPlayer = async id => {
 
 export const getResultsByPlayerName = async name => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players?name=${name}`
+    `https://fantasy-futbol.herokuapp.com/api/v1/players?name=${name}`
   );
   const players = await response.json();
 
@@ -64,7 +62,7 @@ export const getResultsByPlayerName = async name => {
 
 export const getResultsByPlayerClub = async club => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players?club=${club}`
+    `https://fantasy-futbol.herokuapp.com/api/v1/players?club=${club}`
   );
   const players = await response.json();
   const playersByClub = clean.cleanPlayers(players);
@@ -80,7 +78,7 @@ export const addUser = async user => {
     }
   };
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users`,
+    `https://fantasy-futbol.herokuapp.com/api/v1/users`,
     optionsObject
   );
   const addedUser = await response.json();
@@ -89,7 +87,7 @@ export const addUser = async user => {
 
 export const getUsers = async () => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users`
+    `https://fantasy-futbol.herokuapp.com/api/v1/users`
   );
   const users = await response.json();
   return users;
@@ -102,9 +100,7 @@ export const getPlayersByUser = async userInfo => {
   const playerPromises = playerKeys.map(async key => {
     if (userInfo[key]) {
       const response = await fetch(
-        `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/players/${
-          userInfo[key]
-        }`
+        `https://fantasy-futbol.herokuapp.com/api/v1/players/${userInfo[key]}`
       );
       const player = await response.json();
       return player;
@@ -126,7 +122,7 @@ export const getPlayersByUser = async userInfo => {
 
 export const deleteUser = async id => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users/${id}`,
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${id}`,
     { method: 'DELETE' }
   );
   const results = await response.json();
@@ -135,7 +131,7 @@ export const deleteUser = async id => {
 
 export const addPlayerToUser = async (userId, playerId) => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users/${userId}`
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}`
   );
   const user = await response.json();
   const userInfo = user[0];
@@ -155,7 +151,7 @@ export const addPlayerToUser = async (userId, playerId) => {
 
 export const removePlayerFromUser = async (userId, playerId) => {
   const response = await fetch(
-    `${process.env.REACT_APP_DATABASE_API_URL}/api/v1/users/${userId}`
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}`
   );
   const results = await response.json();
   const playerKeys = Object.keys(results[0]).filter(key =>
