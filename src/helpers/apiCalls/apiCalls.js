@@ -40,7 +40,16 @@ export const getPlayer = async id => {
     // `http://localhost:3000/api/v1/players/${id}/`
   );
   const player = await response.json();
-  return clean.cleanPlayerStats(player);
+  console.log(player);
+  const playerStats = clean.cleanPlayerStats(player);
+  return {
+    stats: playerStats,
+    statType: ['Skills', 'Offense', 'Defense', 'Goal-Keeping'],
+    info: {
+      id: player[0].id,
+      Name: player[0].Name
+    }
+  };
 };
 
 export const getResultsByPlayerName = async name => {
@@ -85,30 +94,57 @@ export const getUsers = async () => {
 export const getPlayersByUser = async userInfo => {
   const playerKeys = Object.keys(userInfo).filter(keys =>
     keys.includes('player')
-	);
+  );
   const playerPromises = playerKeys.map(async key => {
-		if (userInfo[key]) {
-    const response = await fetch(
-      `https://fantasy-futbol.herokuapp.com/api/v1/players/${userInfo[key]}`
-    );
-    const player = await response.json();
-		return player;
-		}
+    if (userInfo[key]) {
+      const response = await fetch(
+        `https://fantasy-futbol.herokuapp.com/api/v1/players/${userInfo[key]}`
+      );
+      const player = await response.json();
+      return player;
+    }
   });
 
-	const usersPlayers = await Promise.all(playerPromises);
+  const usersPlayers = await Promise.all(playerPromises);
   return usersPlayers.reduce((playersArr, user) => {
-		if (user) {
-    user.forEach(obj => {
-      playersArr.push(obj);
-		});
-	}
+    if (user) {
+      user.forEach(obj => {
+        playersArr.push(obj);
+      });
+    }
     return playersArr;
-	}, []);
+  }, []);
 };
 
 export const deleteUser = async id => {
-	const response = await fetch(`https://fantasy-futbol.herokuapp.com/api/v1/users/${id}`, {method: 'DELETE'});
-	const results = await response.json();
-	console.log(results)
-}
+  const response = await fetch(
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${id}`,
+    { method: 'DELETE' }
+  );
+  const results = await response.json();
+};
+
+export const addPlayerToUser = async (userId, playerId) => {
+  const response = await fetch(
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}`
+  );
+  const user = await response.json();
+  const userInfo = user[0];
+  const playerKeys = Object.keys(userInfo).filter(key =>
+    key.includes('player')
+  );
+  const matchingKey = playerKeys.find(key => userInfo[key] === null);
+  const playerIdToFill = matchingKey.slice(matchingKey.lastIndexOf('_') + 1);
+  const responseMessage = await fetch(
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}/${playerIdToFill}/players/${playerId}`,
+    { method: 'PUT' }
+  );
+  return await responseMessage.json();
+};
+
+export const removePlayerFromUser = async (userId, playerIndex, playerId) => {
+  const response = await fetch(
+    `https://fantasy-futbol.herokuapp.com/api/v1/users/${userId}/${playerIndex}/players/${playerId}`,
+    { method: 'PUT' }
+  );
+};

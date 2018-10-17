@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
 
 import * as fetch from '../../helpers/apiCalls/apiCalls';
 import { PlayerRow } from '../../components/PlayerRow/PlayerRow';
 import { PlayerModal } from '../../components/PlayerModal/PlayerModal';
 import { FilterBar } from '../../components/FilterBar/FilterBar';
+import * as playerActions from '../../actions/playerActions';
+import { setMessage } from '../../actions/messageActions';
 
 import './Players.css';
 import playerData from '../../data/playerData.json';
 import clubData from '../../data/clubData.json';
-class Players extends Component {
+export class Players extends Component {
   constructor() {
     super();
     this.state = {
       currentPlayers: [],
       playerNames: [],
       countries: [],
-      playerModal: [],
+      modalStats: [],
+      modalStatType: [],
+      modalInfo: {},
       offset: 0,
       open: false,
       searchedName: '',
       searchedClub: '',
       playerSuggestions: [],
-			clubSuggestions: [],
-			currentlySelectedUserPlayer: {}
+      clubSuggestions: []
     };
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   async componentDidMount() {
@@ -36,6 +44,15 @@ class Players extends Component {
     const players = await fetch.getPlayers(start, end);
     this.makePlayerRows(players);
     this.setState({ offset: start });
+  };
+
+  addPlayerToUser = async () => {
+    const { user, player, setPlayerInfo } = this.props;
+
+    const userMessage = await fetch.addPlayerToUser(user, player);
+    console.log(userMessage);
+    setPlayerInfo(userMessage.player[0]);
+    this.setState({ open: false });
   };
 
   changeOffset = number => {
@@ -69,9 +86,14 @@ class Players extends Component {
   };
 
   onOpenModal = async id => {
-		{currentlySelectedUserPlayer} = this.state
+    this.props.addPlayer(id);
     const player = await fetch.getPlayer(id);
-    this.setState({ open: true, playerModal: player, currentlySelectedUserPlayer: this});
+    this.setState({
+      open: true,
+      modalStats: player.stats,
+      modalStatType: player.statType,
+      modalInfo: player.info
+    });
   };
 
   onCloseModal = () => {
@@ -140,7 +162,9 @@ class Players extends Component {
     const {
       searchedName,
       searchedClub,
-      playerModal,
+      modalStats,
+      modalStatType,
+      modalInfo,
       offset,
       currentPlayers,
       countries,
@@ -197,11 +221,34 @@ class Players extends Component {
         )}
 
         <Modal open={open} onClose={this.onCloseModal} center>
-          <PlayerModal addPlayerToUser={this.addPlayerToUser} playerModal={playerModal} />
+          <i class="fas fa-user-circle" onClick={this.addPlayerToUser}>
+            Add {modalInfo.Name}
+          </i>
+
+          <PlayerModal
+            stats={modalStats}
+            statType={modalStatType}
+            info={modalInfo}
+          />
         </Modal>
       </div>
     );
   }
 }
 
-export default Players;
+const mapStateToProps = state => ({
+  user: state.user,
+  player: state.player.id,
+  message: state.message
+});
+
+const mapDispatchToProps = dispatch => ({
+  setPlayerInfo: player => dispatch(playerActions.setPlayerInfo(player)),
+  addPlayer: player => dispatch(playerActions.setCurrentPlayer(player)),
+  addMessage: message => dispatch(setMessage(message))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Players);

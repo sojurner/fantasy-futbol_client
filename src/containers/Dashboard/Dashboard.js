@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
-import { NavLink, BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { NavLink, BrowserRouter } from 'react-router-dom';
 import Modal from 'react-responsive-modal';
 
+import { setCurrentUser } from '../../actions/userActions';
 import * as fetch from '../../helpers/apiCalls/apiCalls';
 
 import './Dashboard.css';
 
-class Dashboard extends Component {
-  constructor() {
-    super();
+export class Dashboard extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       open: false,
       users: [],
       usersPlayers: [],
-      newUserInput: ''
+      newUserInput: '',
+      message: {}
     };
   }
+  componentDidUpdate() {}
 
   componentDidMount() {
+    this.setState({ message: this.props.message });
     this.getUsers();
   }
 
@@ -33,7 +38,7 @@ class Dashboard extends Component {
   handleChange = event => {
     event.preventDefault();
     const { value } = event.target;
-		this.setState({newUserInput: value});
+    this.setState({ newUserInput: value });
   };
 
   addUser = () => {
@@ -47,20 +52,22 @@ class Dashboard extends Component {
       username: newUserInput
     };
     const response = await fetch.addUser(newUser);
-    console.log(response);
     this.setState({
       users: [...users, newUser]
     });
-	};
-	
-	deleteUser = async id => {
-		await fetch.deleteUser(id);
-		this.getUsers();
-	}
+  };
+
+  deleteUser = async id => {
+    await fetch.deleteUser(id);
+    this.getUsers();
+  };
+
+  // deletePlayer = async playerIndex => {
+  //   await fetch.addPlayerToUser = async (userId, playerId)
+  // }
 
   displayUsers = () => {
     return this.state.users.map((user, index) => {
-			console.log(user)
       return (
         <div className="user-option">
           <NavLink
@@ -70,7 +77,10 @@ class Dashboard extends Component {
           >
             {user.username}
           </NavLink>
-          <i onClick={() => this.deleteUser(user.id)} class="fas fa-minus-circle" />
+          <i
+            onClick={() => this.deleteUser(index)}
+            class="fas fa-minus-circle"
+          />
         </div>
       );
     });
@@ -84,6 +94,7 @@ class Dashboard extends Component {
           <p className="dashboard-players">
             {player.Name} <span>{player.Overall}</span>
           </p>
+          <i onClick={() => this.deletePlayer()} class="fas fa-minus-circle" />
         </div>
       );
     });
@@ -94,7 +105,7 @@ class Dashboard extends Component {
     const matchedUser = this.state.users.find(
       user => user.username === textContent
     );
-
+    this.props.addUser(matchedUser.id);
     const players = await fetch.getPlayersByUser(matchedUser);
     this.setState({ usersPlayers: players });
   };
@@ -102,6 +113,8 @@ class Dashboard extends Component {
   render() {
     const users = this.displayUsers();
     const usersPlayers = this.displayUsersPlayers();
+    const { player } = this.props;
+    console.log(player);
     return (
       <BrowserRouter>
         <section className="dashboard">
@@ -119,8 +132,17 @@ class Dashboard extends Component {
             </div>
             <nav className="user-nav">
               {this.state.usersPlayers !== [] && usersPlayers}
+              {player !== {} && (
+                <div>
+                  <img src={`${player.Photo}`} />
+                  <p className="dashboard-players">
+                    {player.Name} <span>{player.Overall}</span>
+                  </p>
+                </div>
+              )}
             </nav>
           </div>
+
           <Modal
             open={this.state.open}
             onClose={this.onCloseModal}
@@ -145,4 +167,17 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+const mapStateToProps = state => ({
+  user: state.user,
+  playerId: state.player.id,
+  player: state.player.info
+});
+
+const mapDispatchToProps = dispatch => ({
+  addUser: user => dispatch(setCurrentUser(user))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Dashboard);

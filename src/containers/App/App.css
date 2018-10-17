@@ -12,3 +12,6 @@
 .body {
   display: grid;
   grid-template-columns: 1fr 4fr; }
+
+.logo-img {
+  vertical-align: middle; }
