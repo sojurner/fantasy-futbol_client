@@ -77,6 +77,7 @@ export class Dashboard extends Component {
           >
             {user.username}
           </NavLink>
+					
           <i
             onClick={() => this.deleteUser(user.id)}
             class="fas fa-minus-circle"

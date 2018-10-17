@@ -33,3 +33,31 @@ th {
 
 .player-name {
   text-align: left; }
+
+.next-page {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #505e76;
+  color: white;
+  font-weight: 700;
+  width: 50%;
+  cursor: pointer; }
+
+.next-page:hover {
+  background-color: #6b7fa0; }
+
+.Previouse-page {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #505e76;
+  color: white;
+  font-weight: 700;
+  width: 50%;
+  cursor: pointer; }
+
+.Previouse-page:hover {
+  background-color: #6b7fa0; }
+
+.next-prev-btns {
+  display: flex;
+  justify-content: space-between; }
