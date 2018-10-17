@@ -199,7 +199,7 @@ export class Players extends Component {
                 <th>Club</th>
                 <th>Overall</th>
                 <th>Value</th>
-                <th>Wage</th>
+                {/* <th>Wage</th> */}
               </tr>
               {currentPlayers}
             </tbody>
