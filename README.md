@@ -1,6 +1,6 @@
-# Movie Tracker
+# Fantasy Futbol
 
-Project that allows users to create a custom Fantasy Futbol league. Uses express server and postgres database [here](https://github.com/sojurner/BYOB) and [Create-React-App](https://github.com/facebook/create-react-app).
+Project that allows users to create a custom Fantasy Futbol league. Uses express server, knex, and postgres database [here](https://github.com/sojurner/BYOB) and [Create-React-App](https://github.com/facebook/create-react-app).
 
 ## Set Up
 
