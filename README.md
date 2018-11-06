@@ -39,6 +39,6 @@
 
 
 ## Contributors
-[Benjamin Paige](https://github.com/benjaminpaige)
+[Benjamin Paige](https://github.com/benjaminpaige) (has a pet pig)
 
 Data from [FiveThirtyEight](https://github.com/fivethirtyeight/data)
