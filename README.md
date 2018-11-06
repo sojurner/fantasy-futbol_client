@@ -9,7 +9,10 @@ Fantasy Futbol allows users to create a custom Fantasy Futbol league.  Users hav
 * [Node.js](https://github.com/sojurner/BYOB) 
   * Knex.js
   * Express.js
-* [React](https://github.com/facebook/create-react-app).
+* [React](https://github.com/facebook/create-react-app)
+ * React-Router
+ * React-Chart
+ * React-Responsive-Modal
 * Redux
 
 ## Testing Suite
