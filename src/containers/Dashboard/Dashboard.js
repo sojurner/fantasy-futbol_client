@@ -67,8 +67,6 @@ export class Dashboard extends Component {
     this.getUsersPlayers();
   };
 
-  getUsersPlayers = () => {};
-
   displayUsers = () => {
     return this.state.users.map((user, index) => {
       return (
@@ -106,7 +104,6 @@ export class Dashboard extends Component {
 
   getUsersPlayers = async e => {
     const { textContent } = e.target;
-    console.log(textContent);
     const matchedUser = this.state.users.find(
       user => user.username === textContent
     );
