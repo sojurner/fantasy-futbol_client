@@ -26,16 +26,13 @@ export class Players extends Component {
       searchedName: '',
       searchedClub: '',
       playerSuggestions: [],
-      clubSuggestions: []
+      clubSuggestions: [],
+      index: 0
     };
   }
 
-  componentDidUpdate() {
-    // console.log(this.state);
-  }
-
   async componentDidMount() {
-    this.getPlayers(0, 30);
+    this.getPlayers(0, 20);
     this.getCountryOptions();
   }
 
@@ -49,13 +46,16 @@ export class Players extends Component {
     const { user, player, setPlayerInfo } = this.props;
 
     const userMessage = await fetch.addPlayerToUser(user, player);
-    console.log(userMessage);
     setPlayerInfo(userMessage.player[0]);
     this.setState({ open: false });
   };
 
-  changeOffset = number => {
-    this.getPlayers(number, number + 30);
+  changeOffset = (number, command) => {
+    command === 'dec'
+      ? this.setState({ index: this.state.index++ })
+      : this.setState({ index: this.state.index-- });
+
+    this.getPlayers(number, number + 20 + this.state.index);
   };
 
   getCountryOptions = async () => {
@@ -66,7 +66,7 @@ export class Players extends Component {
       </option>
     ));
 
-    results.unshift(<option key={'hi'}>Select Country</option>);
+    results.unshift(<option>Select Country</option>);
     this.setState({ countries: results });
   };
 
@@ -210,14 +210,16 @@ export class Players extends Component {
               {this.state.startingPoint !== 0 && (
                 <button
                   className="Previouse-page"
-                  onClick={() => this.changeOffset(this.state.offset - 30)}
+                  onClick={() =>
+                    this.changeOffset(this.state.offset - 20, 'dec')
+                  }
                 >
                   Previous Page
                 </button>
               )}
               <button
                 className="next-page"
-                onClick={() => this.changeOffset(offset + 30)}
+                onClick={() => this.changeOffset(offset + 20, 'inc')}
               >
                 Next Page
               </button>
@@ -233,7 +235,14 @@ export class Players extends Component {
                 Add {'   '}
                 <i className="fas fa-check-circle" />
               </button>
+              <img
+                className="player-img"
+                height="60"
+                width="60"
+                src={modalInfo.Photo}
+              />
               <h2 className="player-name">{modalInfo.Name}</h2>
+              <h4 className="player-overall">{modalInfo.Overall}</h4>
             </div>
             <PlayerModal
               stats={modalStats}
