@@ -1,16 +1,34 @@
-# Movie Tracker
+# Fantasy Futbol
+[See it Live](https://fantasy-futbol-app.herokuapp.com/)
+- Fantasy Futbol is a Soccer Application that allows users to create a custom Fantasy Futbol teams/leagues.  
+- Users have the option to search for players by name, country, or club.  
+- In addition, users can view particular stats and add/remove players to/from their team. 
 
-Project that allows users to create a custom Fantasy Futbol league. Uses express server and postgres database [here](https://github.com/sojurner/BYOB) and [Create-React-App](https://github.com/facebook/create-react-app).
+
+## Technology
+
+* [Node.js](https://github.com/sojurner/BYOB) 
+  * Knex.js
+  * Express.js
+* [React](https://github.com/facebook/create-react-app)
+  * React-Router
+  * React-Chart
+  * React-Responsive-Modal
+* Redux
+
+## Testing Suite
+
+* Enzyme / Jest
 
 ## Set Up
 
-Clone down this repo
+- Clone down this repo
 
-Run `npm install`
+- Installing Dependencies: `npm install`
 
-Run `npm start`
+- Starting Server: `npm start`
 
-You can run tests with `npm test`
+- Running test `npm test`
 
 ## Final Result
 ![Screenshot 1](src/screenshots/1.png) 
@@ -18,3 +36,9 @@ You can run tests with `npm test`
 ![Screenshot 2](src/screenshots/2.png)  
 
 ![Screenshot 3](src/screenshots/3.png)  
+
+
+## Contributors
+[Benjamin Paige](https://github.com/benjaminpaige) (has a pet pig)
+
+Data from [FiveThirtyEight](https://github.com/fivethirtyeight/data)
