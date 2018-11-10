@@ -4,6 +4,9 @@
 .styles_closeButton__20ID4 {
   cursor: pointer; }
 
+.styles_modal__gNwvD {
+  background-color: #d8d8d8; }
+
 .styles_closeButton__20ID4:hover {
   color: #c9b8b8;
   animation: pulse 1s linear infinite; }
