@@ -15,6 +15,7 @@ class App extends Component {
             src={require('../../images/soccer1-logo.png')}
             height="50"
           />
+          <i className="far fa-futbol" />
         </h1>
         <div className="body">
           <Dashboard />
