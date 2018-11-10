@@ -47,7 +47,9 @@ export const getPlayer = async id => {
     statType: ['Skills', 'Offense', 'Defense', 'Goal-Keeping'],
     info: {
       id: player[0].id,
-      Name: player[0].Name
+      Name: player[0].Name,
+      Photo: player[0].Photo,
+      Overall: player[0].Overall
     }
   };
 };
