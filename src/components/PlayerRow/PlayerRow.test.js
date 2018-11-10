@@ -16,6 +16,7 @@ describe('PlayerRow', () => {
   let wrapper = shallow(
     <PlayerRow
       id={mockId}
+      Positions={mockPositions}
       Photo={mockPhoto}
       Name={mockName}
       Nationality={mockNationality}
