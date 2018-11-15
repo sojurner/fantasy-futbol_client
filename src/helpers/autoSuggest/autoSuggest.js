@@ -1,46 +1,43 @@
-import match from 'autosuggest-highlight/match';
-import parse from 'autosuggest-highlight/parse';
+import playerData from '../../data/playerData.json';
+import clubData from '../../data/clubData.json';
+import countryData from '../../data/countryData.json';
 
-import Autosuggest from 'Autosuggest';
-
-escapeRegexCharacters = str => {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-};
-
-getSuggestions = value => {
+export const getSuggestions = (value, name) => {
   const escapedValue = escapeRegexCharacters(value.trim());
-
   if (escapedValue === '') {
     return [];
   }
-
   const regex = new RegExp('\\b' + escapedValue, 'i');
+  if (name === 'name') {
+    return playerData.filter(player =>
+      regex.test(getSuggestionValue(player, name))
+    );
+  }
+  if (name === 'club') {
+    return clubData.filter(club => regex.test(getSuggestionValue(club, name)));
+  }
 
-  return people.filter(person => regex.test(getSuggestionValue(person)));
+  if (name === 'country') {
+    return countryData.filter(player =>
+      regex.test(getSuggestionValue(player, name))
+    );
+  }
 };
 
-getSuggestionValue = suggestion => {
-  return `${suggestion.first} ${suggestion.last}`;
+const escapeRegexCharacters = str => {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 };
 
-renderSuggestion = (suggestion, { query }) => {
-  const suggestionText = `${suggestion.first} ${suggestion.last}`;
-  const matches = match(suggestionText, query);
-  const parts = parse(suggestionText, matches);
+const getSuggestionValue = (suggestion, name) => {
+  if (name === 'name') {
+    return `${suggestion.Name}`;
+  }
 
-  return (
-    <span className={'suggestion-content ' + suggestion.twitter}>
-      <span className="name">
-        {parts.map((part, index) => {
-          const className = part.highlight ? 'highlight' : null;
+  if (name === 'club') {
+    return `${suggestion}`;
+  }
 
-          return (
-            <span className={className} key={index}>
-              {part.text}
-            </span>
-          );
-        })}
-      </span>
-    </span>
-  );
+  if (name === 'country') {
+    return `${suggestion.name}`;
+  }
 };
