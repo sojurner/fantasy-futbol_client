@@ -1,0 +1,779 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerModal should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    statType={
+        Array [
+            "Skills",
+            "Offense",
+            "Defense",
+            "Goal-Keeping",
+          ]
+    }
+    stats={
+        Array [
+            Object {
+              "Acceleration": 92,
+              "Aggression": 48,
+              "Agility": 90,
+              "Balance": 95,
+              "Composure": 96,
+              "Jumping": 68,
+              "Sprint_speed": 87,
+              "Stamina": 73,
+              "Strength": 59,
+              "Vision": 90,
+            },
+            Object {
+              "Ball_control": 95,
+              "Curve": 89,
+              "Dribbling": 97,
+              "Finishing": 95,
+              "Free_kick_accuracy": 90,
+              "Heading_accuracy": 71,
+              "Long_shots": 88,
+              "Positioning": 93,
+              "Shot_power": 85,
+            },
+            Object {
+              "Crossing": 77,
+              "Interceptions": 22,
+              "Long_passing": 87,
+              "Marking": 13,
+              "Reactions": 95,
+              "Short_passing": 88,
+              "Sliding_tackle": 26,
+              "Standing_tackle": 28,
+              "Volleys": 85,
+            },
+            Object {
+              "GK_diving": 6,
+              "GK_handling": 11,
+              "GK_kicking": 15,
+              "GK_positioning": 14,
+              "GK_reflexes": 8,
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <HorizontalBar
+          data={
+                    Object {
+                              "datasets": Array [
+                                Object {
+                                  "backgroundColor": "rgb(206,192,155, 0.5)",
+                                  "borderColor": "rgba(179,181,198,1)",
+                                  "data": Array [
+                                    92,
+                                    48,
+                                    90,
+                                    95,
+                                    96,
+                                    59,
+                                    87,
+                                    68,
+                                    90,
+                                    73,
+                                  ],
+                                  "label": "Skills",
+                                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                                  "pointBorderColor": "#fff",
+                                  "pointHoverBackgroundColor": "#fff",
+                                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                },
+                              ],
+                              "labels": Array [
+                                "Acceleration",
+                                "Aggression",
+                                "Agility",
+                                "Balance",
+                                "Composure",
+                                "Strength",
+                                "Sprint_speed",
+                                "Jumping",
+                                "Vision",
+                                "Stamina",
+                              ],
+                            }
+          }
+          height="215px"
+/>,
+        <HorizontalBar
+          data={
+                    Object {
+                              "datasets": Array [
+                                Object {
+                                  "backgroundColor": "rgb(0,82,148, 0.5)",
+                                  "borderColor": "rgba(179,181,198,1)",
+                                  "data": Array [
+                                    90,
+                                    85,
+                                    88,
+                                    71,
+                                    95,
+                                    97,
+                                    95,
+                                    93,
+                                    89,
+                                  ],
+                                  "label": "Offense",
+                                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                                  "pointBorderColor": "#fff",
+                                  "pointHoverBackgroundColor": "#fff",
+                                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                },
+                              ],
+                              "labels": Array [
+                                "Free_kick_accuracy",
+                                "Shot_power",
+                                "Long_shots",
+                                "Heading_accuracy",
+                                "Finishing",
+                                "Dribbling",
+                                "Ball_control",
+                                "Positioning",
+                                "Curve",
+                              ],
+                            }
+          }
+          height="215px"
+/>,
+        <HorizontalBar
+          data={
+                    Object {
+                              "datasets": Array [
+                                Object {
+                                  "backgroundColor": "rgb(114,114,113, 0.5)",
+                                  "borderColor": "rgba(179,181,198,1)",
+                                  "data": Array [
+                                    22,
+                                    13,
+                                    95,
+                                    26,
+                                    28,
+                                    77,
+                                    85,
+                                    88,
+                                    87,
+                                  ],
+                                  "label": "Defense",
+                                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                                  "pointBorderColor": "#fff",
+                                  "pointHoverBackgroundColor": "#fff",
+                                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                },
+                              ],
+                              "labels": Array [
+                                "Interceptions",
+                                "Marking",
+                                "Reactions",
+                                "Sliding_tackle",
+                                "Standing_tackle",
+                                "Crossing",
+                                "Volleys",
+                                "Short_passing",
+                                "Long_passing",
+                              ],
+                            }
+          }
+          height="215px"
+/>,
+        <HorizontalBar
+          data={
+                    Object {
+                              "datasets": Array [
+                                Object {
+                                  "backgroundColor": "rgb(187,187,187, 0.5)",
+                                  "borderColor": "rgba(179,181,198,1)",
+                                  "data": Array [
+                                    6,
+                                    11,
+                                    15,
+                                    14,
+                                    8,
+                                  ],
+                                  "label": "Goal-Keeping",
+                                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                                  "pointBorderColor": "#fff",
+                                  "pointHoverBackgroundColor": "#fff",
+                                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                },
+                              ],
+                              "labels": Array [
+                                "GK_diving",
+                                "GK_handling",
+                                "GK_kicking",
+                                "GK_positioning",
+                                "GK_reflexes",
+                              ],
+                            }
+          }
+          height="215px"
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Skills,Offense,Defense,Goal-Keeping-0",
+        "nodeType": "class",
+        "props": Object {
+          "data": Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": "rgb(206,192,155, 0.5)",
+                "borderColor": "rgba(179,181,198,1)",
+                "data": Array [
+                  92,
+                  48,
+                  90,
+                  95,
+                  96,
+                  59,
+                  87,
+                  68,
+                  90,
+                  73,
+                ],
+                "label": "Skills",
+                "pointBackgroundColor": "rgba(179,181,198,1)",
+                "pointBorderColor": "#fff",
+                "pointHoverBackgroundColor": "#fff",
+                "pointHoverBorderColor": "rgba(179,181,198,1)",
+              },
+            ],
+            "labels": Array [
+              "Acceleration",
+              "Aggression",
+              "Agility",
+              "Balance",
+              "Composure",
+              "Strength",
+              "Sprint_speed",
+              "Jumping",
+              "Vision",
+              "Stamina",
+            ],
+          },
+          "height": "215px",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Skills,Offense,Defense,Goal-Keeping-1",
+        "nodeType": "class",
+        "props": Object {
+          "data": Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": "rgb(0,82,148, 0.5)",
+                "borderColor": "rgba(179,181,198,1)",
+                "data": Array [
+                  90,
+                  85,
+                  88,
+                  71,
+                  95,
+                  97,
+                  95,
+                  93,
+                  89,
+                ],
+                "label": "Offense",
+                "pointBackgroundColor": "rgba(179,181,198,1)",
+                "pointBorderColor": "#fff",
+                "pointHoverBackgroundColor": "#fff",
+                "pointHoverBorderColor": "rgba(179,181,198,1)",
+              },
+            ],
+            "labels": Array [
+              "Free_kick_accuracy",
+              "Shot_power",
+              "Long_shots",
+              "Heading_accuracy",
+              "Finishing",
+              "Dribbling",
+              "Ball_control",
+              "Positioning",
+              "Curve",
+            ],
+          },
+          "height": "215px",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Skills,Offense,Defense,Goal-Keeping-2",
+        "nodeType": "class",
+        "props": Object {
+          "data": Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": "rgb(114,114,113, 0.5)",
+                "borderColor": "rgba(179,181,198,1)",
+                "data": Array [
+                  22,
+                  13,
+                  95,
+                  26,
+                  28,
+                  77,
+                  85,
+                  88,
+                  87,
+                ],
+                "label": "Defense",
+                "pointBackgroundColor": "rgba(179,181,198,1)",
+                "pointBorderColor": "#fff",
+                "pointHoverBackgroundColor": "#fff",
+                "pointHoverBorderColor": "rgba(179,181,198,1)",
+              },
+            ],
+            "labels": Array [
+              "Interceptions",
+              "Marking",
+              "Reactions",
+              "Sliding_tackle",
+              "Standing_tackle",
+              "Crossing",
+              "Volleys",
+              "Short_passing",
+              "Long_passing",
+            ],
+          },
+          "height": "215px",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Skills,Offense,Defense,Goal-Keeping-3",
+        "nodeType": "class",
+        "props": Object {
+          "data": Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": "rgb(187,187,187, 0.5)",
+                "borderColor": "rgba(179,181,198,1)",
+                "data": Array [
+                  6,
+                  11,
+                  15,
+                  14,
+                  8,
+                ],
+                "label": "Goal-Keeping",
+                "pointBackgroundColor": "rgba(179,181,198,1)",
+                "pointBorderColor": "#fff",
+                "pointHoverBackgroundColor": "#fff",
+                "pointHoverBorderColor": "rgba(179,181,198,1)",
+              },
+            ],
+            "labels": Array [
+              "GK_diving",
+              "GK_handling",
+              "GK_kicking",
+              "GK_positioning",
+              "GK_reflexes",
+            ],
+          },
+          "height": "215px",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <HorizontalBar
+            data={
+                        Object {
+                                    "datasets": Array [
+                                      Object {
+                                        "backgroundColor": "rgb(206,192,155, 0.5)",
+                                        "borderColor": "rgba(179,181,198,1)",
+                                        "data": Array [
+                                          92,
+                                          48,
+                                          90,
+                                          95,
+                                          96,
+                                          59,
+                                          87,
+                                          68,
+                                          90,
+                                          73,
+                                        ],
+                                        "label": "Skills",
+                                        "pointBackgroundColor": "rgba(179,181,198,1)",
+                                        "pointBorderColor": "#fff",
+                                        "pointHoverBackgroundColor": "#fff",
+                                        "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                      },
+                                    ],
+                                    "labels": Array [
+                                      "Acceleration",
+                                      "Aggression",
+                                      "Agility",
+                                      "Balance",
+                                      "Composure",
+                                      "Strength",
+                                      "Sprint_speed",
+                                      "Jumping",
+                                      "Vision",
+                                      "Stamina",
+                                    ],
+                                  }
+            }
+            height="215px"
+/>,
+          <HorizontalBar
+            data={
+                        Object {
+                                    "datasets": Array [
+                                      Object {
+                                        "backgroundColor": "rgb(0,82,148, 0.5)",
+                                        "borderColor": "rgba(179,181,198,1)",
+                                        "data": Array [
+                                          90,
+                                          85,
+                                          88,
+                                          71,
+                                          95,
+                                          97,
+                                          95,
+                                          93,
+                                          89,
+                                        ],
+                                        "label": "Offense",
+                                        "pointBackgroundColor": "rgba(179,181,198,1)",
+                                        "pointBorderColor": "#fff",
+                                        "pointHoverBackgroundColor": "#fff",
+                                        "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                      },
+                                    ],
+                                    "labels": Array [
+                                      "Free_kick_accuracy",
+                                      "Shot_power",
+                                      "Long_shots",
+                                      "Heading_accuracy",
+                                      "Finishing",
+                                      "Dribbling",
+                                      "Ball_control",
+                                      "Positioning",
+                                      "Curve",
+                                    ],
+                                  }
+            }
+            height="215px"
+/>,
+          <HorizontalBar
+            data={
+                        Object {
+                                    "datasets": Array [
+                                      Object {
+                                        "backgroundColor": "rgb(114,114,113, 0.5)",
+                                        "borderColor": "rgba(179,181,198,1)",
+                                        "data": Array [
+                                          22,
+                                          13,
+                                          95,
+                                          26,
+                                          28,
+                                          77,
+                                          85,
+                                          88,
+                                          87,
+                                        ],
+                                        "label": "Defense",
+                                        "pointBackgroundColor": "rgba(179,181,198,1)",
+                                        "pointBorderColor": "#fff",
+                                        "pointHoverBackgroundColor": "#fff",
+                                        "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                      },
+                                    ],
+                                    "labels": Array [
+                                      "Interceptions",
+                                      "Marking",
+                                      "Reactions",
+                                      "Sliding_tackle",
+                                      "Standing_tackle",
+                                      "Crossing",
+                                      "Volleys",
+                                      "Short_passing",
+                                      "Long_passing",
+                                    ],
+                                  }
+            }
+            height="215px"
+/>,
+          <HorizontalBar
+            data={
+                        Object {
+                                    "datasets": Array [
+                                      Object {
+                                        "backgroundColor": "rgb(187,187,187, 0.5)",
+                                        "borderColor": "rgba(179,181,198,1)",
+                                        "data": Array [
+                                          6,
+                                          11,
+                                          15,
+                                          14,
+                                          8,
+                                        ],
+                                        "label": "Goal-Keeping",
+                                        "pointBackgroundColor": "rgba(179,181,198,1)",
+                                        "pointBorderColor": "#fff",
+                                        "pointHoverBackgroundColor": "#fff",
+                                        "pointHoverBorderColor": "rgba(179,181,198,1)",
+                                      },
+                                    ],
+                                    "labels": Array [
+                                      "GK_diving",
+                                      "GK_handling",
+                                      "GK_kicking",
+                                      "GK_positioning",
+                                      "GK_reflexes",
+                                    ],
+                                  }
+            }
+            height="215px"
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Skills,Offense,Defense,Goal-Keeping-0",
+          "nodeType": "class",
+          "props": Object {
+            "data": Object {
+              "datasets": Array [
+                Object {
+                  "backgroundColor": "rgb(206,192,155, 0.5)",
+                  "borderColor": "rgba(179,181,198,1)",
+                  "data": Array [
+                    92,
+                    48,
+                    90,
+                    95,
+                    96,
+                    59,
+                    87,
+                    68,
+                    90,
+                    73,
+                  ],
+                  "label": "Skills",
+                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                  "pointBorderColor": "#fff",
+                  "pointHoverBackgroundColor": "#fff",
+                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                },
+              ],
+              "labels": Array [
+                "Acceleration",
+                "Aggression",
+                "Agility",
+                "Balance",
+                "Composure",
+                "Strength",
+                "Sprint_speed",
+                "Jumping",
+                "Vision",
+                "Stamina",
+              ],
+            },
+            "height": "215px",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Skills,Offense,Defense,Goal-Keeping-1",
+          "nodeType": "class",
+          "props": Object {
+            "data": Object {
+              "datasets": Array [
+                Object {
+                  "backgroundColor": "rgb(0,82,148, 0.5)",
+                  "borderColor": "rgba(179,181,198,1)",
+                  "data": Array [
+                    90,
+                    85,
+                    88,
+                    71,
+                    95,
+                    97,
+                    95,
+                    93,
+                    89,
+                  ],
+                  "label": "Offense",
+                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                  "pointBorderColor": "#fff",
+                  "pointHoverBackgroundColor": "#fff",
+                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                },
+              ],
+              "labels": Array [
+                "Free_kick_accuracy",
+                "Shot_power",
+                "Long_shots",
+                "Heading_accuracy",
+                "Finishing",
+                "Dribbling",
+                "Ball_control",
+                "Positioning",
+                "Curve",
+              ],
+            },
+            "height": "215px",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Skills,Offense,Defense,Goal-Keeping-2",
+          "nodeType": "class",
+          "props": Object {
+            "data": Object {
+              "datasets": Array [
+                Object {
+                  "backgroundColor": "rgb(114,114,113, 0.5)",
+                  "borderColor": "rgba(179,181,198,1)",
+                  "data": Array [
+                    22,
+                    13,
+                    95,
+                    26,
+                    28,
+                    77,
+                    85,
+                    88,
+                    87,
+                  ],
+                  "label": "Defense",
+                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                  "pointBorderColor": "#fff",
+                  "pointHoverBackgroundColor": "#fff",
+                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                },
+              ],
+              "labels": Array [
+                "Interceptions",
+                "Marking",
+                "Reactions",
+                "Sliding_tackle",
+                "Standing_tackle",
+                "Crossing",
+                "Volleys",
+                "Short_passing",
+                "Long_passing",
+              ],
+            },
+            "height": "215px",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Skills,Offense,Defense,Goal-Keeping-3",
+          "nodeType": "class",
+          "props": Object {
+            "data": Object {
+              "datasets": Array [
+                Object {
+                  "backgroundColor": "rgb(187,187,187, 0.5)",
+                  "borderColor": "rgba(179,181,198,1)",
+                  "data": Array [
+                    6,
+                    11,
+                    15,
+                    14,
+                    8,
+                  ],
+                  "label": "Goal-Keeping",
+                  "pointBackgroundColor": "rgba(179,181,198,1)",
+                  "pointBorderColor": "#fff",
+                  "pointHoverBackgroundColor": "#fff",
+                  "pointHoverBorderColor": "rgba(179,181,198,1)",
+                },
+              ],
+              "labels": Array [
+                "GK_diving",
+                "GK_handling",
+                "GK_kicking",
+                "GK_positioning",
+                "GK_reflexes",
+              ],
+            },
+            "height": "215px",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
