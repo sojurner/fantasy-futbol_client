@@ -47,17 +47,14 @@ class FilterBar extends Component {
   });
   };
 
-  const clubSuggestionList = clubSuggestions.map(suggestion => {
-    if (suggestion) {
-      return (
-        <span
-          className="suggestion-row"
-          onClick={event => searchPlayers(event, 'club')}
-        >
-          <p className="suggest-club">{suggestion}</p>
-        </span>
-      );
-    }
+  setSearchOption = selectedFilter => {
+    if (selectedFilter === 'Select Option') {
+      this.setState({ selectedFilter: null, searchInput: '', suggestions: [] });
+    } else {
+      this.setState({
+        selectedFilter,
+        searchInput: '',
+        suggestions: []
   });
   return (
     <div className="filter-bar">
