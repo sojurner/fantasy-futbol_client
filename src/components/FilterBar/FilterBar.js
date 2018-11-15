@@ -16,7 +16,7 @@ class FilterBar extends Component {
       searchInput: '',
       suggestions: null
     };
-    }
+  }
 
   searchPlayers = async (e, id) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ class FilterBar extends Component {
     this.setState({
       [name]: value,
       suggestions: getSuggestions(value, this.state.selectedFilter)
-  });
+    });
   };
 
   setSearchOption = selectedFilter => {
@@ -55,16 +55,16 @@ class FilterBar extends Component {
         selectedFilter,
         searchInput: '',
         suggestions: []
-  });
+      });
     }
   };
 
   render() {
     const { searchInput, suggestions, selectedFilter } = this.state;
 
-  return (
-    <div className="filter-bar">
-      <h3 className="filter-title">Filter Players</h3>
+    return (
+      <div className="filter-bar">
+        <h3 className="filter-title">Filter Players</h3>
         <FilterDropDown setSearchOption={this.setSearchOption} />
         <SearchInput
           selectedFilter={selectedFilter}
@@ -76,10 +76,10 @@ class FilterBar extends Component {
             searchPlayers={this.searchPlayers}
             suggestions={suggestions.slice(0, 6)}
             selectedFilter={selectedFilter}
-        />
+          />
         )}
-    </div>
-  );
+      </div>
+    );
   }
 }
 
