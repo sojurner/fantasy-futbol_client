@@ -1,27 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import { FilterDropDown } from '../FilterDropDown/FilterDropDown';
+import { SearchInput } from '../SearchInput/SearchInput';
+import { PlayerSuggestions } from '../PlayerSuggestions/PlayerSuggestions';
+import { getSuggestions } from '../../helpers/autoSuggest/autoSuggest';
+import * as fetch from '../../helpers/apiCalls/apiCalls';
 
 import './FilterBar.css';
 
-export const FilterBar = ({
-  filterPlayersByCountry,
-  searchPlayers,
-  handleChange,
-  currentSearchClub,
-  currentSearchName,
-  countries,
-  playerSuggestions,
-  clubSuggestions
-}) => {
-  const playerSuggestionList = playerSuggestions.map(suggestion => {
-    if (suggestion) {
-      return (
-        <span
-          className="suggestion-row"
-          onClick={event => searchPlayers(event, 'name')}
-        >
-          <p className="suggest-name">{suggestion.Name}</p>
-        </span>
-      );
+class FilterBar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedFilter: '',
+      searchInput: '',
+      suggestions: null
+    };
     }
   });
 
