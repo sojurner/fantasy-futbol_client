@@ -38,7 +38,14 @@ class FilterBar extends Component {
     this.setState({ suggestions: null });
   };
 
+  handleChange = async e => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+      suggestions: getSuggestions(value, this.state.selectedFilter)
   });
+  };
 
   const clubSuggestionList = clubSuggestions.map(suggestion => {
     if (suggestion) {
