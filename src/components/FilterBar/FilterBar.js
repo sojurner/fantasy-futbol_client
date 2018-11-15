@@ -17,6 +17,7 @@ class FilterBar extends Component {
       suggestions: null
     };
     }
+
   });
 
   const clubSuggestionList = clubSuggestions.map(suggestion => {
