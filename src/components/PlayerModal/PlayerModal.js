@@ -1,32 +1,56 @@
-import React from 'react';
-import { Polar } from 'react-chartjs-2';
-import './PlayerModal.css';
+import React, { Component } from 'react';
+import Modal from 'react-responsive-modal';
 
-export const PlayerModal = ({ stats, statType }) => {
-  let hexCodes = [
-    'rgb(206,192,155, 0.5)',
-    'rgb(0,82,148, 0.5)',
-    'rgb(114,114,113, 0.5)',
-    'rgb(187,187,187, 0.5)'
-  ];
-  const playerStats = stats.map((stat, index) => {
-    const backgroundColor = Object.keys(stat).map(
-      (stat, indice) => hexCodes[indice % 3]
-    );
-    const data = {
-      labels: Object.keys(stat),
-      display: false,
-      datasets: [
-        {
-          backgroundColor,
-          borderColor: 'rgba(179,181,198,1)',
-          pointHoverBackgroundColor: '#ffffa',
-          pointHoverBorderColor: 'rgba(179,181,198,1)',
-          data: Object.values(stat)
-        }
-      ]
+import { getPlayer } from '../../helpers/apiCalls/apiCalls';
+
+import { PlayerStats } from '../PlayerStats/PlayerStats';
+
+class PlayerModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalStats: [],
+      modalStatType: [],
+      modalInfo: {}
     };
-    return <Polar data={data} key={`${statType}-${index}`} height="215px" />;
-  });
-  return <div>{playerStats}</div>;
-};
+  }
+
+  async componentDidMount() {
+    const player = await getPlayer(this.props.id);
+    await this.setState({
+      modalInfo: player.info,
+      modalStats: player.stats,
+      modalStatType: player.statType
+    });
+  }
+
+  render() {
+    const { modalInfo, modalStats, modalStatType } = this.state;
+    const { addPlayerToUser, open, onCloseModal } = this.props;
+    return (
+      <Modal open={open} onClose={onCloseModal} center>
+        <div className="modal-header">
+          <button className="add-player-button" onClick={addPlayerToUser}>
+            Add {'   '}
+            <i className="fas fa-check-circle" />
+          </button>
+          <img
+            className="player-img"
+            height="60"
+            width="60"
+            src={modalInfo.Photo}
+          />
+          <h2 className="player-name">{modalInfo.Name}</h2>
+          <h4 className="player-overall">{modalInfo.Overall}</h4>
+        </div>
+        <PlayerStats
+          stats={modalStats}
+          statType={modalStatType}
+          info={modalInfo}
+        />
+      </Modal>
+    );
+  }
+}
+
+export default PlayerModal;
