@@ -56,32 +56,31 @@ class FilterBar extends Component {
         searchInput: '',
         suggestions: []
   });
+    }
+  };
+
+  render() {
+    const { searchInput, suggestions, selectedFilter } = this.state;
+
   return (
     <div className="filter-bar">
       <h3 className="filter-title">Filter Players</h3>
-      <select onChange={event => filterPlayersByCountry(event.target.value)}>
-        {countries}
-      </select>
-      <form>
-        <input
-          className="name-search"
-          name="searchedName"
-          value={currentSearchName}
-          placeholder="Search by name"
-          onChange={handleChange}
+        <FilterDropDown setSearchOption={this.setSearchOption} />
+        <SearchInput
+          selectedFilter={selectedFilter}
+          currentSearch={searchInput}
+          handleChange={this.handleChange}
         />
-      </form>
-      <div className="suggestion-box">{playerSuggestionList}</div>
-      <form>
-        <input
-          className="club-search"
-          onChange={handleChange}
-          name="searchedClub"
-          value={currentSearchClub}
-          placeholder="Search by club"
+        {suggestions && (
+          <PlayerSuggestions
+            searchPlayers={this.searchPlayers}
+            suggestions={suggestions.slice(0, 6)}
+            selectedFilter={selectedFilter}
         />
-      </form>
-      <div className="suggestion-box">{clubSuggestionList}</div>
+        )}
     </div>
   );
-};
+  }
+}
+
+export default FilterBar;
