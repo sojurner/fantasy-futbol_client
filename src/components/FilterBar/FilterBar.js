@@ -18,6 +18,26 @@ class FilterBar extends Component {
     };
     }
 
+  searchPlayers = async (e, id) => {
+    e.preventDefault();
+    let players;
+    const { textContent } = e.target;
+
+    switch (this.state.selectedFilter) {
+      case 'name':
+        players = await fetch.getResultsByPlayerName(textContent);
+        break;
+      case 'club':
+        players = await fetch.getResultsByPlayerClub(textContent);
+        break;
+      case 'country':
+        players = await fetch.getPlayersByCountry(id);
+        break;
+    }
+    this.props.makePlayerRows(players);
+    this.setState({ suggestions: null });
+  };
+
   });
 
   const clubSuggestionList = clubSuggestions.map(suggestion => {
