@@ -1,5 +1,6 @@
 .table-headers {
-  position: fixed; }
+  position: fixed;
+  top: 4.5rem; }
 
 .fa-futbol {
   padding-left: 0.8rem; }
@@ -8,7 +9,7 @@
   padding-left: 1.7rem; }
 
 .player-nationality {
-  padding-left: 1.8rem; }
+  padding-left: 2.8rem; }
 
 .player-position {
   padding-left: 0.4rem; }

@@ -15,6 +15,7 @@
 }
 
 table {
+  margin-top: 3rem;
   max-width: 760px;
   grid-column: 1 / 2;
   background-color: rgb(237, 237, 237);
@@ -23,7 +24,7 @@ table {
 
 tbody {
   display: block;
-  height: 85vh;
+  height: 78vh;
   overflow-y: scroll;
 }
 

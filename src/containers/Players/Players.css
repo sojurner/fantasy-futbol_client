@@ -1,32 +1,27 @@
 @font-face {
   font-family: noto;
-  src: url('../../fonts/NotoSansKR-Regular.otf');
-}
+  src: url("../../fonts/NotoSansKR-Regular.otf"); }
 
 .players-table {
   background-color: #cfcfcf;
-  grid-column: 2 / 3;
-}
+  grid-column: 2 / 3; }
 
 .filter-players {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  height: 90vh;
-}
+  height: 90vh; }
 
 table {
   margin-top: 3rem;
   max-width: 760px;
   grid-column: 1 / 2;
   background-color: #ededed;
-  border-collapse: collapse;
-}
+  border-collapse: collapse; }
 
 tbody {
   display: block;
   height: 78vh;
-  overflow-y: scroll;
-}
+  overflow-y: scroll; }
 
 th {
   font-size: 1rem;
@@ -35,12 +30,10 @@ th {
   padding: 0.8rem;
   font-family: noto;
   color: #fafafa;
-  background-color: #676767;
-}
+  background-color: #676767; }
 
 .player-name {
-  text-align: left;
-}
+  text-align: left; }
 
 .next-page {
   padding: 10px 20px;
@@ -49,12 +42,10 @@ th {
   color: white;
   font-weight: 700;
   width: 50%;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .next-page:hover {
-  background-color: #6b7fa0;
-}
+  background-color: #6b7fa0; }
 
 .Previouse-page {
   padding: 10px 20px;
@@ -63,15 +54,12 @@ th {
   color: white;
   font-weight: 700;
   width: 50%;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .Previouse-page:hover {
-  background-color: #6b7fa0;
-}
+  background-color: #6b7fa0; }
 
 .next-prev-btns {
   display: flex;
   justify-content: space-between;
-  max-width: 760px;
-}
+  max-width: 760px; }
