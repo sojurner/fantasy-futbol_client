@@ -1,0 +1,67 @@
+.chartjs-render-monitor {
+  font-size: 2rem; }
+
+.styles_closeButton__20ID4 {
+  cursor: pointer; }
+
+.styles_modal__gNwvD {
+  background-color: #d8d8d8; }
+
+.styles_closeButton__20ID4:hover {
+  color: #c9b8b8;
+  animation: pulse 1s linear infinite; }
+
+.styles_closeButton__20ID4:focus {
+  outline: 0; }
+
+.fa-check-circle {
+  color: #f2f2f2; }
+
+.add-player-button {
+  padding: 0rem 1rem;
+  color: #f2f2f2;
+  height: 3rem;
+  background-color: #a7a7a7;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-right: 5rem;
+  align-self: start;
+  justify-self: start;
+  cursor: pointer; }
+
+.add-player-button:hover,
+.fa-check-circle:hover {
+  transition: 0.2s linear;
+  background-color: #508cb1; }
+
+.modal-player-name {
+  margin: 0.8rem;
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: 2px; }
+
+.modal-player-header {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  margin-left: 5rem; }
+
+.player-overall {
+  font-weight: 400;
+  margin: auto; }
+
+.fa-globe {
+  margin: auto 0.5rem auto 1rem;
+  font-size: 1.4rem; }
+
+.modal-header {
+  display: flex;
+  flex-direction: row; }
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(157, 158, 158, 0.367); }
+  50% {
+    box-shadow: 0 0 0 7px rgba(157, 158, 158, 0.134); }
+  100% {
+    box-shadow: 0 0 0 0 rgba(157, 158, 158, 0); } }

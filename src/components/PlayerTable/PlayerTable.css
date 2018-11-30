@@ -1,0 +1,24 @@
+.table-headers {
+  position: fixed; }
+
+.fa-futbol {
+  padding-left: 0.8rem; }
+
+.player-name {
+  padding-left: 1.7rem; }
+
+.player-nationality {
+  padding-left: 1.8rem; }
+
+.player-position {
+  padding-left: 0.4rem; }
+
+.player-club {
+  padding-left: 2.5rem; }
+
+.player-overall {
+  padding-left: 6.5rem; }
+
+.player-value {
+  padding-left: 0.3rem;
+  padding-right: 3.3rem; }

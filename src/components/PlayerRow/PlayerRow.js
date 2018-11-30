@@ -18,15 +18,12 @@ export const PlayerRow = ({
       <td>
         <img src={Photo} height="35" className="photo" alt="alt_text" />
       </td>
-
       <td>{Name}</td>
-
       <td>{Nationality}</td>
       <td>{Positions}</td>
       <td>{Club}</td>
       <td>{Overall}</td>
       <td>{Value}</td>
-      {/* <td>{Wage}</td> */}
     </tr>
   );
 };
