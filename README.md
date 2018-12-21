@@ -1,5 +1,5 @@
 # Fantasy Futbol
-[See it Live](https://fantasy-futbol-app.herokuapp.com/)
+[See it Live](https://fantasy-futbol.netlify.com/)
 - Fantasy Futbol is a Soccer Application that allows users to create a custom Fantasy Futbol teams/leagues.  
 - Users have the option to search for players by name, country, or club.  
 - In addition, users can view particular stats and add/remove players to/from their team. 
