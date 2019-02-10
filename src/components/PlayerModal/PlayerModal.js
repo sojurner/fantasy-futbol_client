@@ -41,6 +41,11 @@ class PlayerModal extends Component {
               height="60"
               width="60"
               src={modalInfo.Photo}
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src =
+                  'https://wingslax.com/wp-content/uploads/2017/12/no-image-available.png';
+              }}
             />
             <h2 className="modal-player-name">{modalInfo.Name}</h2>
             <i className="fas fa-globe" />

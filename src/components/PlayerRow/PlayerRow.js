@@ -10,7 +10,6 @@ export const PlayerRow = ({
   Club,
   Overall,
   Value,
-  Wage,
   onOpenModal
 }) => {
   return (
