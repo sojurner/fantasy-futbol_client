@@ -171,5 +171,5 @@ export const removePlayerFromUser = async (userId, playerId) => {
     }/api/v1/users/${userId}/${playerIdToFill}`,
     { method: 'PUT' }
   );
-  const newResult = await newResponse.json();
+  await newResponse.json();
 };
