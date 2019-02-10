@@ -23,6 +23,10 @@ export const PlayerRow = ({
             e.target.src =
               'https://www.referee.com/wp-content/uploads/2012/10/FIFA.png';
           }}
+          height="35"
+          className="photo"
+          alt="alt_text"
+        />
       </td>
       <td>{Name}</td>
       <td>{Nationality}</td>
